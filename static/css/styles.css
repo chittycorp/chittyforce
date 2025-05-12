@@ -1,66 +1,118 @@
-/* Additional custom styles */
+
+/* Custom theme colors and styles */
 :root {
-    --bs-border-radius: 0.25rem;
+  --primary-bg: #0E1525;
+  --secondary-bg: #1C2333;
+  --border-color: #2B3245;
+  --text-primary: #F5F9FC;
+  --text-secondary: #697389;
+  --accent-blue: #0099FF;
+  --accent-purple: #9B30FF;
+  --danger: #E32222;
 }
 
 body {
-    background-color: var(--bs-dark);
-    color: var(--bs-light);
+  background-color: var(--primary-bg);
+  color: var(--text-primary);
+  font-family: IBM Plex Sans, sans-serif;
 }
 
 .card {
-    transition: transform 0.2s ease-in-out;
+  background-color: var(--secondary-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  transition: transform 0.2s ease;
 }
 
 .card:hover {
-    transform: translateY(-5px);
+  transform: translateY(-2px);
 }
 
-.bg-dark-subtle {
-    background-color: rgba(255, 255, 255, 0.05) !important;
+.card-header {
+  border-bottom: 1px solid var(--border-color);
+  background-color: var(--secondary-bg);
 }
 
-/* Custom card hover states */
-.border-info:hover {
-    box-shadow: 0 0 15px rgba(13, 202, 240, 0.3);
+.form-control, .form-select {
+  background-color: var(--primary-bg);
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
 }
 
-.border-warning:hover {
-    box-shadow: 0 0 15px rgba(255, 193, 7, 0.3);
+.form-control:focus, .form-select:focus {
+  background-color: var(--primary-bg);
+  border-color: var(--accent-blue);
+  box-shadow: 0 0 0 2px rgba(0, 153, 255, 0.25);
+  color: var(--text-primary);
 }
 
-.border-success:hover {
-    box-shadow: 0 0 15px rgba(25, 135, 84, 0.3);
+.btn-primary {
+  background-color: var(--accent-blue);
+  border: none;
 }
 
-.border-primary:hover {
-    box-shadow: 0 0 15px rgba(13, 110, 253, 0.3);
+.btn-primary:hover {
+  background-color: #007acc;
 }
 
-.border-danger:hover {
-    box-shadow: 0 0 15px rgba(220, 53, 69, 0.3);
+.btn-outline-secondary {
+  border-color: var(--border-color);
+  color: var(--text-primary);
 }
 
-.border-light:hover {
-    box-shadow: 0 0 15px rgba(248, 249, 250, 0.3);
+.btn-outline-secondary:hover {
+  background-color: var(--border-color);
+  border-color: var(--border-color);
+  color: var(--text-primary);
 }
 
-/* API status badges */
-.badge.bg-warning {
-    color: var(--bs-dark);
+.nav-tabs {
+  border-bottom: 1px solid var(--border-color);
 }
 
-/* Custom button styles */
-.btn-outline-info, .btn-outline-warning, .btn-outline-success, 
-.btn-outline-primary, .btn-outline-danger, .btn-outline-light {
-    transition: all 0.2s ease-in-out;
+.nav-tabs .nav-link {
+  color: var(--text-secondary);
+  border: none;
 }
 
-/* Footer styles */
+.nav-tabs .nav-link:hover {
+  border-color: transparent;
+  color: var(--text-primary);
+}
+
+.nav-tabs .nav-link.active {
+  background-color: transparent;
+  border-bottom: 2px solid var(--accent-blue);
+  color: var(--text-primary);
+}
+
+.alert {
+  background-color: var(--secondary-bg);
+  border: 1px solid var(--border-color);
+}
+
+.alert-info {
+  border-left: 4px solid var(--accent-blue);
+}
+
+.alert-success {
+  border-left: 4px solid #00ba7c;
+}
+
+.alert-warning {
+  border-left: 4px solid #e4b30f;
+}
+
+.badge {
+  border-radius: 12px;
+  padding: 4px 8px;
+}
+
+.key-list {
+  background-color: var(--primary-bg) !important;
+}
+
 footer {
-    border-top: 1px solid var(--bs-secondary);
-}
-
-.badge.bg-dark-subtle {
-    background-color: rgba(255, 255, 255, 0.1) !important;
+  background-color: var(--secondary-bg);
+  border-top: 1px solid var(--border-color);
 }
