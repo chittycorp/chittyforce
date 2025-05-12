@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }}</title>
+    <link href="https://cdn.replit.com/agent/bootstrap-agent-dark-theme.min.css" rel="stylesheet">
+    <link href="/static/css/styles.css" rel="stylesheet">
+</head>
+<body class="bg-dark text-light">
+    <header class="py-3 bg-dark">
+        <div class="container">
+            <div class="d-flex align-items-center justify-content-between">
+                <h1 class="h3 mb-0">🔐 SecureKey Workspace Agent</h1>
+                <div class="d-flex align-items-center">
+                    <span class="badge bg-success me-2">Online</span>
+                    <a href="/docs" class="btn btn-outline-light btn-sm">API Docs</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="container my-4">
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="card bg-dark-subtle border-secondary mb-4">
+                    <div class="card-header border-secondary">
+                        <h2 class="card-title h5 mb-0">Workspace Controls</h2>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <div class="card h-100 bg-dark border-info">
+                                    <div class="card-body">
+                                        <h3 class="h6 card-title">Google Drive</h3>
+                                        <p class="card-text small">Create, list, and manage folders and files in Google Drive.</p>
+                                        <button class="btn btn-sm btn-outline-info" disabled>Configure</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <div class="card h-100 bg-dark border-warning">
+                                    <div class="card-body">
+                                        <h3 class="h6 card-title">Google Docs</h3>
+                                        <p class="card-text small">Create and edit documents with smart path resolution.</p>
+                                        <button class="btn btn-sm btn-outline-warning" disabled>Configure</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <div class="card h-100 bg-dark border-success">
+                                    <div class="card-body">
+                                        <h3 class="h6 card-title">Google Sheets</h3>
+                                        <p class="card-text small">Create spreadsheets and manage data in cells and ranges.</p>
+                                        <button class="btn btn-sm btn-outline-success" disabled>Configure</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <div class="card h-100 bg-dark border-primary">
+                                    <div class="card-body">
+                                        <h3 class="h6 card-title">Google Slides</h3>
+                                        <p class="card-text small">Create presentations and manage slides with elements.</p>
+                                        <button class="btn btn-sm btn-outline-primary" disabled>Configure</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card bg-dark-subtle border-secondary mb-4">
+                    <div class="card-header border-secondary">
+                        <h2 class="card-title h5 mb-0">Integrations</h2>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <div class="card h-100 bg-dark border-danger">
+                                    <div class="card-body">
+                                        <h3 class="h6 card-title">Notion</h3>
+                                        <p class="card-text small">Create and update pages in Notion databases.</p>
+                                        <button class="btn btn-sm btn-outline-danger" disabled>Configure</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <div class="card h-100 bg-dark border-light">
+                                    <div class="card-body">
+                                        <h3 class="h6 card-title">GitHub</h3>
+                                        <p class="card-text small">Create issues and manage project cards.</p>
+                                        <button class="btn btn-sm btn-outline-light" disabled>Configure</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4">
+                <div class="card bg-dark-subtle border-secondary mb-4">
+                    <div class="card-header border-secondary">
+                        <h2 class="card-title h5 mb-0">API Status</h2>
+                    </div>
+                    <div class="card-body">
+                        <div class="list-group bg-transparent">
+                            <div class="list-group-item bg-dark border-secondary d-flex justify-content-between align-items-center">
+                                API Key
+                                <span class="badge bg-warning">Required</span>
+                            </div>
+                            <div class="list-group-item bg-dark border-secondary d-flex justify-content-between align-items-center">
+                                Google Service Account
+                                <span class="badge bg-warning">Required</span>
+                            </div>
+                            <div class="list-group-item bg-dark border-secondary d-flex justify-content-between align-items-center">
+                                Notion Integration
+                                <span class="badge bg-secondary">Optional</span>
+                            </div>
+                            <div class="list-group-item bg-dark border-secondary d-flex justify-content-between align-items-center">
+                                GitHub Token
+                                <span class="badge bg-secondary">Optional</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card bg-dark-subtle border-secondary">
+                    <div class="card-header border-secondary">
+                        <h2 class="card-title h5 mb-0">Quick Actions</h2>
+                    </div>
+                    <div class="card-body">
+                        <div class="d-grid gap-2">
+                            <a href="/docs" class="btn btn-primary">View API Documentation</a>
+                            <button class="btn btn-outline-info" disabled>Test Connection</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="py-3 mt-4 bg-dark border-top border-secondary">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center">
+                <span class="text-muted small">SecureKey Workspace Agent v1.0.0</span>
+                <div>
+                    <span class="badge bg-dark-subtle text-light">FastAPI</span>
+                    <span class="badge bg-dark-subtle text-light">Google Workspace</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/static/js/main.js"></script>
+</body>
+</html>

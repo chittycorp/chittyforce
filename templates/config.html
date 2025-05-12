@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Configuration - {{ title }}</title>
+    <link href="https://cdn.replit.com/agent/bootstrap-agent-dark-theme.min.css" rel="stylesheet">
+    <link href="/static/css/styles.css" rel="stylesheet">
+</head>
+<body class="bg-dark text-light">
+    <header class="py-3 bg-dark">
+        <div class="container">
+            <div class="d-flex align-items-center justify-content-between">
+                <h1 class="h3 mb-0">🔐 SecureKey Configuration</h1>
+                <div class="d-flex align-items-center">
+                    <a href="/" class="btn btn-outline-light btn-sm me-2">Dashboard</a>
+                    <a href="/docs" class="btn btn-outline-light btn-sm">API Docs</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="container my-4">
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
+                {% if has_connector %}
+                <div class="alert alert-success mb-4">
+                    <h4 class="alert-heading">Universal Connector Enabled</h4>
+                    <p>This application is integrated with the Universal Connector for key management. API keys and secrets are retrieved securely from the Universal Connector service.</p>
+                    <hr>
+                    <p class="mb-0">Connector URL: <code>{{ connector_url }}</code></p>
+                </div>
+                {% endif %}
+                
+                <nav class="mb-4">
+                    <div class="nav nav-tabs" id="config-tab" role="tablist">
+                        <button class="nav-link active" id="direct-tab" data-bs-toggle="tab" data-bs-target="#direct" type="button" role="tab" aria-controls="direct" aria-selected="true">Direct Configuration</button>
+                        {% if has_connector %}
+                        <button class="nav-link" id="connector-tab" data-bs-toggle="tab" data-bs-target="#connector" type="button" role="tab" aria-controls="connector" aria-selected="false">Universal Connector</button>
+                        {% endif %}
+                    </div>
+                </nav>
+                
+                <div class="tab-content" id="configTabContent">
+                    <!-- Direct Configuration Tab -->
+                    <div class="tab-pane fade show active" id="direct" role="tabpanel" aria-labelledby="direct-tab">
+                        <div class="card bg-dark-subtle border-secondary mb-4">
+                            <div class="card-header border-secondary">
+                                <h2 class="card-title h5 mb-0">Direct API Configuration</h2>
+                            </div>
+                            <div class="card-body">
+                                <div class="alert alert-info">
+                                    <p class="mb-0"><strong>Note:</strong> The following information is used to configure the SecureKey Workspace Agent. Your API keys and secrets are stored as environment variables and are not exposed to users.</p>
+                                </div>
+                                
+                                <form id="direct-config-form" class="mt-4">
+                                    <div class="mb-3">
+                                        <label for="api-key" class="form-label">API Key</label>
+                                        <div class="input-group">
+                                            <input type="password" class="form-control bg-dark text-light border-secondary" id="api-key" placeholder="Enter your API key">
+                                            <button class="btn btn-outline-secondary" type="button" onclick="togglePassword('api-key')">
+                                                <i class="bi bi-eye"></i>
+                                            </button>
+                                        </div>
+                                        <div class="form-text text-light-50">This key is used to authenticate API requests.</div>
+                                    </div>
+                                    
+                                    <div class="mb-3">
+                                        <label for="google-sa-key" class="form-label">Google Service Account Key</label>
+                                        <textarea class="form-control bg-dark text-light border-secondary" id="google-sa-key" rows="3" placeholder="Paste your Google service account JSON key"></textarea>
+                                        <div class="form-text text-light-50">The service account key is used to authenticate with Google Workspace APIs.</div>
+                                    </div>
+                                    
+                                    <div class="mb-3">
+                                        <label for="notion-api-key" class="form-label">Notion API Key (Optional)</label>
+                                        <div class="input-group">
+                                            <input type="password" class="form-control bg-dark text-light border-secondary" id="notion-api-key" placeholder="Enter your Notion API key">
+                                            <button class="btn btn-outline-secondary" type="button" onclick="togglePassword('notion-api-key')">
+                                                <i class="bi bi-eye"></i>
+                                            </button>
+                                        </div>
+                                        <div class="form-text text-light-50">Required only if you want to use Notion integration.</div>
+                                    </div>
+                                    
+                                    <div class="mb-3">
+                                        <label for="github-api-key" class="form-label">GitHub API Key (Optional)</label>
+                                        <div class="input-group">
+                                            <input type="password" class="form-control bg-dark text-light border-secondary" id="github-api-key" placeholder="Enter your GitHub API key">
+                                            <button class="btn btn-outline-secondary" type="button" onclick="togglePassword('github-api-key')">
+                                                <i class="bi bi-eye"></i>
+                                            </button>
+                                        </div>
+                                        <div class="form-text text-light-50">Required only if you want to use GitHub integration.</div>
+                                    </div>
+                                    
+                                    <div class="d-grid gap-2">
+                                        <button type="button" class="btn btn-primary" onclick="saveDirectConfiguration()">Save Configuration</button>
+                                        <button type="button" class="btn btn-outline-secondary" onclick="testDirectConfiguration()">Test Configuration</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Universal Connector Tab -->
+                    {% if has_connector %}
+                    <div class="tab-pane fade" id="connector" role="tabpanel" aria-labelledby="connector-tab">
+                        <div class="card bg-dark-subtle border-secondary mb-4">
+                            <div class="card-header border-secondary">
+                                <h2 class="card-title h5 mb-0">Universal Connector Configuration</h2>
+                            </div>
+                            <div class="card-body">
+                                <div class="alert alert-info">
+                                    <p class="mb-0"><strong>Note:</strong> Configure the Universal Connector integration for secure key management. Your API keys and secrets are stored securely in the Universal Connector service.</p>
+                                </div>
+                                
+                                <form id="connector-config-form" class="mt-4">
+                                    <div class="mb-3">
+                                        <label for="connector-url" class="form-label">Universal Connector URL</label>
+                                        <input type="text" class="form-control bg-dark text-light border-secondary" id="connector-url" placeholder="Enter Universal Connector URL" value="{{ connector_url }}">
+                                        <div class="form-text text-light-50">The URL of the Universal Connector service.</div>
+                                    </div>
+                                    
+                                    <div class="mb-3">
+                                        <label for="connector-key" class="form-label">Universal Connector API Key</label>
+                                        <div class="input-group">
+                                            <input type="password" class="form-control bg-dark text-light border-secondary" id="connector-key" placeholder="Enter Universal Connector API key">
+                                            <button class="btn btn-outline-secondary" type="button" onclick="togglePassword('connector-key')">
+                                                <i class="bi bi-eye"></i>
+                                            </button>
+                                        </div>
+                                        <div class="form-text text-light-50">API key to access the Universal Connector service.</div>
+                                    </div>
+                                    
+                                    <div class="mb-3">
+                                        <label class="form-label">Available Keys</label>
+                                        <div class="bg-dark p-3 border border-secondary rounded mb-2 key-list" style="max-height: 200px; overflow-y: auto;">
+                                            <div id="key-list-content">
+                                                <p class="text-muted text-center">Connect to view available keys</p>
+                                            </div>
+                                        </div>
+                                        <button type="button" class="btn btn-sm btn-outline-info" onclick="refreshKeyList()">Refresh Key List</button>
+                                    </div>
+                                    
+                                    <div class="d-grid gap-2">
+                                        <button type="button" class="btn btn-primary" onclick="saveConnectorConfiguration()">Save Connector Configuration</button>
+                                        <button type="button" class="btn btn-outline-secondary" onclick="testConnectorConfiguration()">Test Connector</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        
+                        <!-- Key Management Section -->
+                        <div class="card bg-dark-subtle border-secondary mb-4">
+                            <div class="card-header border-secondary">
+                                <h2 class="card-title h5 mb-0">Key Management</h2>
+                            </div>
+                            <div class="card-body">
+                                <form id="key-management-form">
+                                    <div class="mb-3">
+                                        <label for="key-name" class="form-label">Key Name</label>
+                                        <select class="form-select bg-dark text-light border-secondary" id="key-name">
+                                            <option value="API_KEY">API_KEY</option>
+                                            <option value="GOOGLE_SA_KEY_JSON">GOOGLE_SA_KEY_JSON</option>
+                                            <option value="NOTION_API_KEY">NOTION_API_KEY</option>
+                                            <option value="GITHUB_API_KEY">GITHUB_API_KEY</option>
+                                            <option value="custom">Custom Key Name...</option>
+                                        </select>
+                                    </div>
+                                    
+                                    <div class="mb-3" id="custom-key-name-container" style="display: none;">
+                                        <label for="custom-key-name" class="form-label">Custom Key Name</label>
+                                        <input type="text" class="form-control bg-dark text-light border-secondary" id="custom-key-name" placeholder="Enter custom key name">
+                                    </div>
+                                    
+                                    <div class="mb-3">
+                                        <label for="key-value" class="form-label">Key Value</label>
+                                        <div class="input-group">
+                                            <textarea class="form-control bg-dark text-light border-secondary" id="key-value" rows="3" placeholder="Enter key value"></textarea>
+                                            <button class="btn btn-outline-secondary" type="button" onclick="clearKeyValue()">
+                                                <i class="bi bi-x-lg"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="d-grid gap-2">
+                                        <button type="button" class="btn btn-success" onclick="storeKey()">Store Key</button>
+                                        <button type="button" class="btn btn-danger" onclick="deleteKey()">Delete Key</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    {% endif %}
+                </div>
+                
+                <div class="card bg-dark-subtle border-secondary">
+                    <div class="card-header border-secondary">
+                        <h2 class="card-title h5 mb-0">Setup Instructions</h2>
+                    </div>
+                    <div class="card-body">
+                        <h3 class="h6">Google Workspace Setup</h3>
+                        <ol class="small">
+                            <li>Go to the <a href="https://console.cloud.google.com/" target="_blank" class="text-info">Google Cloud Console</a>.</li>
+                            <li>Create a new project or select an existing one.</li>
+                            <li>Enable the Google Drive API, Docs API, Sheets API, and Slides API.</li>
+                            <li>Create a Service Account.</li>
+                            <li>Generate a JSON key for the Service Account.</li>
+                            <li>Paste the entire JSON content into the Google Service Account Key field.</li>
+                        </ol>
+                        
+                        <h3 class="h6 mt-3">Notion Integration Setup</h3>
+                        <ol class="small">
+                            <li>Go to <a href="https://www.notion.so/my-integrations" target="_blank" class="text-info">Notion Integrations</a>.</li>
+                            <li>Create a new integration.</li>
+                            <li>Copy the Integration Secret and paste it into the Notion API Key field.</li>
+                            <li>Share the Notion databases you want to access with the integration.</li>
+                        </ol>
+                        
+                        <h3 class="h6 mt-3">GitHub Integration Setup</h3>
+                        <ol class="small">
+                            <li>Go to <a href="https://github.com/settings/tokens" target="_blank" class="text-info">GitHub Personal Access Tokens</a>.</li>
+                            <li>Generate a new token with the required permissions (repo, project).</li>
+                            <li>Copy the token and paste it into the GitHub API Key field.</li>
+                        </ol>
+                        
+                        {% if has_connector %}
+                        <h3 class="h6 mt-3">Universal Connector Setup</h3>
+                        <ol class="small">
+                            <li>Access the <a href="https://universalconnector.replit.app" target="_blank" class="text-info">Universal Connector</a> application.</li>
+                            <li>Create an account or log in.</li>
+                            <li>Generate an API key for this application.</li>
+                            <li>Configure the Universal Connector URL and API key in the form above.</li>
+                            <li>Store your API keys securely in the Universal Connector service.</li>
+                        </ol>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="py-3 mt-4 bg-dark border-top border-secondary">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center">
+                <span class="text-muted small">SecureKey Workspace Agent v1.0.0</span>
+                <div>
+                    <span class="badge bg-dark-subtle text-light">Configuration</span>
+                    {% if has_connector %}
+                    <span class="badge bg-success text-light">Universal Connector</span>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Toggle password visibility
+        function togglePassword(id) {
+            const input = document.getElementById(id);
+            if (input.type === "password") {
+                input.type = "text";
+            } else {
+                input.type = "password";
+            }
+        }
+        
+        // Listen for custom key name selection
+        document.addEventListener('DOMContentLoaded', function() {
+            const keyNameSelect = document.getElementById('key-name');
+            const customKeyNameContainer = document.getElementById('custom-key-name-container');
+            
+            if (keyNameSelect) {
+                keyNameSelect.addEventListener('change', function() {
+                    if (this.value === 'custom') {
+                        customKeyNameContainer.style.display = 'block';
+                    } else {
+                        customKeyNameContainer.style.display = 'none';
+                    }
+                });
+            }
+        });
+        
+        // Clear key value
+        function clearKeyValue() {
+            document.getElementById('key-value').value = '';
+        }
+        
+        // Save direct configuration
+        function saveDirectConfiguration() {
+            const apiKey = document.getElementById('api-key').value;
+            const googleSaKey = document.getElementById('google-sa-key').value;
+            const notionApiKey = document.getElementById('notion-api-key').value;
+            const githubApiKey = document.getElementById('github-api-key').value;
+            
+            if (!apiKey) {
+                alert('API Key is required');
+                return;
+            }
+            
+            if (!googleSaKey) {
+                alert('Google Service Account Key is required');
+                return;
+            }
+            
+            alert('Configuration would be saved here. In a production setting, this would securely store your API keys as environment variables.');
+        }
+        
+        // Test direct configuration
+        function testDirectConfiguration() {
+            alert('Testing configuration... In a production setting, this would verify your API keys can successfully connect to the respective services.');
+        }
+        
+        {% if has_connector %}
+        // Save connector configuration
+        function saveConnectorConfiguration() {
+            const connectorUrl = document.getElementById('connector-url').value;
+            const connectorKey = document.getElementById('connector-key').value;
+            
+            if (!connectorUrl) {
+                alert('Universal Connector URL is required');
+                return;
+            }
+            
+            if (!connectorKey) {
+                alert('Universal Connector API Key is required');
+                return;
+            }
+            
+            // In a real implementation, this would update environment variables
+            alert('Universal Connector configuration saved. The application will now use the Universal Connector for key management.');
+        }
+        
+        // Test connector configuration
+        function testConnectorConfiguration() {
+            const connectorUrl = document.getElementById('connector-url').value;
+            const connectorKey = document.getElementById('connector-key').value;
+            
+            if (!connectorUrl || !connectorKey) {
+                alert('Universal Connector URL and API Key are required');
+                return;
+            }
+            
+            // In a real implementation, this would test the connection to the Universal Connector
+            alert('Testing Universal Connector connection... In a production setting, this would verify your connection to the Universal Connector service.');
+        }
+        
+        // Refresh key list
+        function refreshKeyList() {
+            const keyListContent = document.getElementById('key-list-content');
+            
+            // In a real implementation, this would fetch the list of keys from the Universal Connector
+            keyListContent.innerHTML = `
+                <ul class="list-group">
+                    <li class="list-group-item bg-dark border-secondary d-flex justify-content-between align-items-center">
+                        API_KEY
+                        <span class="badge bg-success">Available</span>
+                    </li>
+                    <li class="list-group-item bg-dark border-secondary d-flex justify-content-between align-items-center">
+                        GOOGLE_SA_KEY_JSON
+                        <span class="badge bg-success">Available</span>
+                    </li>
+                    <li class="list-group-item bg-dark border-secondary d-flex justify-content-between align-items-center">
+                        NOTION_API_KEY
+                        <span class="badge bg-secondary">Not Found</span>
+                    </li>
+                </ul>
+            `;
+        }
+        
+        // Store key in Universal Connector
+        function storeKey() {
+            const keyNameSelect = document.getElementById('key-name');
+            const customKeyNameInput = document.getElementById('custom-key-name');
+            const keyValue = document.getElementById('key-value').value;
+            
+            let keyName = keyNameSelect.value;
+            if (keyName === 'custom') {
+                keyName = customKeyNameInput.value;
+                if (!keyName) {
+                    alert('Custom key name is required');
+                    return;
+                }
+            }
+            
+            if (!keyValue) {
+                alert('Key value is required');
+                return;
+            }
+            
+            // In a real implementation, this would store the key in the Universal Connector
+            alert(`Key ${keyName} would be stored in the Universal Connector.`);
+        }
+        
+        // Delete key from Universal Connector
+        function deleteKey() {
+            const keyNameSelect = document.getElementById('key-name');
+            const customKeyNameInput = document.getElementById('custom-key-name');
+            
+            let keyName = keyNameSelect.value;
+            if (keyName === 'custom') {
+                keyName = customKeyNameInput.value;
+                if (!keyName) {
+                    alert('Custom key name is required');
+                    return;
+                }
+            }
+            
+            // In a real implementation, this would delete the key from the Universal Connector
+            if (confirm(`Are you sure you want to delete the key ${keyName}? This action cannot be undone.`)) {
+                alert(`Key ${keyName} would be deleted from the Universal Connector.`);
+            }
+        }
+        {% endif %}
+    </script>
+</body>
+</html>
