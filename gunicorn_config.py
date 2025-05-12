@@ -5,10 +5,10 @@ import multiprocessing
 import os
 
 # Gunicorn app configuration
-wsgi_app = "wsgi:application"
+wsgi_app = "asgi:application"  # Use our asgi application
 bind = "0.0.0.0:5000"
-workers = multiprocessing.cpu_count() * 2 + 1
-worker_class = "uvicorn.workers.UvicornWorker"
+workers = 1
+worker_class = "uvicorn.workers.UvicornWorker"  # Use Uvicorn worker for ASGI compatibility
 reload = True
 reload_extra_files = ["templates"]
 

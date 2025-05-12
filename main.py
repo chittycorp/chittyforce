@@ -10,6 +10,12 @@ from typing import Optional, Dict, Any, List
 from pydantic import BaseModel
 import uvicorn
 
+# Configure explicit path to help with module loading
+import sys
+current_dir = os.path.dirname(os.path.abspath(__file__))
+if current_dir not in sys.path:
+    sys.path.append(current_dir)
+
 # Configure logging
 logging.basicConfig(
     level=logging.INFO,
