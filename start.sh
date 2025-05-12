@@ -1,2 +1,3 @@
-#!/bin/sh
-uvicorn main:app --host 0.0.0.0 --port 5000
+#!/bin/bash
+# Start the FastAPI application using uvicorn directly
+python3 server.py

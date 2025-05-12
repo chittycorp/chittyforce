@@ -9,7 +9,7 @@ logger = logging.getLogger(__name__)
 
 # Universal Connector Configuration
 UNIVERSAL_CONNECTOR_URL = os.environ.get("UNIVERSAL_CONNECTOR_URL", "https://universalconnector.replit.app")
-UNIVERSAL_CONNECTOR_KEY = os.environ.get("UNIVERSAL_CONNECTOR_KEY")
+UNIVERSAL_CONNECTOR_KEY = os.environ.get("UNIVERSAL_CONNECTOR_KEY", "")  # Default to empty string to avoid None errors
 
 class ConnectorResponse(BaseModel):
     success: bool
@@ -21,7 +21,7 @@ class KeyManager:
     KeyManager handles interactions with the Universal Connector service
     to retrieve and manage API keys and secrets.
     """
-    def __init__(self, base_url: str = None, api_key: str = None):
+    def __init__(self, base_url: Optional[str] = None, api_key: Optional[str] = None):
         """
         Initialize the KeyManager.
         
@@ -333,3 +333,13 @@ def setup_google_sa_key_file() -> Optional[str]:
     except Exception as e:
         logger.error(f"Error setting up Google SA key file: {str(e)}")
         return None
+
+# Export all the necessary functions and objects
+__all__ = [
+    'key_manager',
+    'get_api_key',
+    'get_google_sa_key_json',
+    'get_notion_api_key',
+    'get_github_api_key',
+    'setup_google_sa_key_file',
+]
