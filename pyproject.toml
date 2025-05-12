@@ -7,6 +7,7 @@ dependencies = [
     "asgiref>=3.8.1",
     "email-validator>=2.2.0",
     "fastapi>=0.115.12",
+    "flask-dance>=7.1.0",
     "flask>=3.1.0",
     "flask-sqlalchemy>=3.1.1",
     "google-api-python-client>=2.169.0",
@@ -21,4 +22,7 @@ dependencies = [
     "pytest-httpx>=0.35.0",
     "requests>=2.32.3",
     "uvicorn[standard]>=0.34.2",
+    "flask-login>=0.6.3",
+    "oauthlib>=3.2.2",
+    "pyjwt>=2.10.1",
 ]
