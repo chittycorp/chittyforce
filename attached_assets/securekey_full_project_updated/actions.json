@@ -1,0 +1,13 @@
+{
+  "name": "SecureKey Workspace Agent",
+  "description": "Autonomous API agent with full access to Google Drive, Docs, Sheets, and Slides including shared drives, smart paths, and content manipulation.",
+  "api": {
+    "type": "openapi",
+    "url": "https://your-service-url/openapi.json",
+    "auth": {
+      "type": "bearer",
+      "bearer": "your_actual_api_key_here"
+    }
+  },
+  "logo_url": "https://your-logo-url.com/logo.png"
+}
