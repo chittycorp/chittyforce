@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Configuration - {{ title }}</title>
+    <link href="https://cdn.replit.com/agent/bootstrap-agent-dark-theme.min.css" rel="stylesheet">
+    <link href="/static/css/styles.css" rel="stylesheet">
+</head>
+<body class="bg-dark text-light">
+    <header class="py-3 bg-dark">
+        <div class="container">
+            <div class="d-flex align-items-center justify-content-between">
+                <h1 class="h3 mb-0">🔐 SecureKey Configuration</h1>
+                <div class="d-flex align-items-center">
+                    <a href="/" class="btn btn-outline-light btn-sm me-2">Dashboard</a>
+                    <a href="/docs" class="btn btn-outline-light btn-sm">API Docs</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="container my-4">
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
+                <div class="card bg-dark-subtle border-secondary mb-4">
+                    <div class="card-header border-secondary">
+                        <h2 class="card-title h5 mb-0">API Configuration</h2>
+                    </div>
+                    <div class="card-body">
+                        <div class="alert alert-info">
+                            <p class="mb-0"><strong>Note:</strong> The following information is used to configure the SecureKey Workspace Agent. Your API keys and secrets are stored as environment variables and are not exposed to users.</p>
+                        </div>
+                        
+                        <form id="config-form" class="mt-4">
+                            <div class="mb-3">
+                                <label for="api-key" class="form-label">API Key</label>
+                                <div class="input-group">
+                                    <input type="password" class="form-control bg-dark text-light border-secondary" id="api-key" placeholder="Enter your API key">
+                                    <button class="btn btn-outline-secondary" type="button" onclick="togglePassword('api-key')">
+                                        <i class="bi bi-eye"></i>
+                                    </button>
+                                </div>
+                                <div class="form-text text-light-50">This key is used to authenticate API requests.</div>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="google-sa-key" class="form-label">Google Service Account Key</label>
+                                <textarea class="form-control bg-dark text-light border-secondary" id="google-sa-key" rows="3" placeholder="Paste your Google service account JSON key"></textarea>
+                                <div class="form-text text-light-50">The service account key is used to authenticate with Google Workspace APIs.</div>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="notion-api-key" class="form-label">Notion API Key (Optional)</label>
+                                <div class="input-group">
+                                    <input type="password" class="form-control bg-dark text-light border-secondary" id="notion-api-key" placeholder="Enter your Notion API key">
+                                    <button class="btn btn-outline-secondary" type="button" onclick="togglePassword('notion-api-key')">
+                                        <i class="bi bi-eye"></i>
+                                    </button>
+                                </div>
+                                <div class="form-text text-light-50">Required only if you want to use Notion integration.</div>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="github-api-key" class="form-label">GitHub API Key (Optional)</label>
+                                <div class="input-group">
+                                    <input type="password" class="form-control bg-dark text-light border-secondary" id="github-api-key" placeholder="Enter your GitHub API key">
+                                    <button class="btn btn-outline-secondary" type="button" onclick="togglePassword('github-api-key')">
+                                        <i class="bi bi-eye"></i>
+                                    </button>
+                                </div>
+                                <div class="form-text text-light-50">Required only if you want to use GitHub integration.</div>
+                            </div>
+                            
+                            <div class="d-grid gap-2">
+                                <button type="button" class="btn btn-primary" onclick="saveConfiguration()">Save Configuration</button>
+                                <button type="button" class="btn btn-outline-secondary" onclick="testConfiguration()">Test Configuration</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                
+                <div class="card bg-dark-subtle border-secondary">
+                    <div class="card-header border-secondary">
+                        <h2 class="card-title h5 mb-0">Setup Instructions</h2>
+                    </div>
+                    <div class="card-body">
+                        <h3 class="h6">Google Workspace Setup</h3>
+                        <ol class="small">
+                            <li>Go to the <a href="https://console.cloud.google.com/" target="_blank" class="text-info">Google Cloud Console</a>.</li>
+                            <li>Create a new project or select an existing one.</li>
+                            <li>Enable the Google Drive API, Docs API, Sheets API, and Slides API.</li>
+                            <li>Create a Service Account.</li>
+                            <li>Generate a JSON key for the Service Account.</li>
+                            <li>Paste the entire JSON content into the Google Service Account Key field.</li>
+                        </ol>
+                        
+                        <h3 class="h6 mt-3">Notion Integration Setup</h3>
+                        <ol class="small">
+                            <li>Go to <a href="https://www.notion.so/my-integrations" target="_blank" class="text-info">Notion Integrations</a>.</li>
+                            <li>Create a new integration.</li>
+                            <li>Copy the Integration Secret and paste it into the Notion API Key field.</li>
+                            <li>Share the Notion databases you want to access with the integration.</li>
+                        </ol>
+                        
+                        <h3 class="h6 mt-3">GitHub Integration Setup</h3>
+                        <ol class="small">
+                            <li>Go to <a href="https://github.com/settings/tokens" target="_blank" class="text-info">GitHub Personal Access Tokens</a>.</li>
+                            <li>Generate a new token with the required permissions (repo, project).</li>
+                            <li>Copy the token and paste it into the GitHub API Key field.</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="py-3 mt-4 bg-dark border-top border-secondary">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center">
+                <span class="text-muted small">SecureKey Workspace Agent v1.0.0</span>
+                <div>
+                    <span class="badge bg-dark-subtle text-light">Configuration</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Toggle password visibility
+        function togglePassword(id) {
+            const input = document.getElementById(id);
+            if (input.type === "password") {
+                input.type = "text";
+            } else {
+                input.type = "password";
+            }
+        }
+        
+        // Save configuration
+        function saveConfiguration() {
+            // In a real implementation, this would send the data to a backend endpoint
+            // For now, we'll just show an alert
+            alert('Configuration would be saved here. In a production setting, this would securely store your API keys as environment variables.');
+        }
+        
+        // Test configuration
+        function testConfiguration() {
+            // In a real implementation, this would test the connections
+            // For now, we'll just show an alert
+            alert('Testing configuration... In a production setting, this would verify your API keys can successfully connect to the respective services.');
+        }
+    </script>
+</body>
+</html>

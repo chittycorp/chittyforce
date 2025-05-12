@@ -1,0 +1,22 @@
+[project]
+name = "repl-nix-workspace"
+version = "0.1.0"
+description = "Add your description here"
+requires-python = ">=3.11"
+dependencies = [
+    "email-validator>=2.2.0",
+    "fastapi>=0.115.12",
+    "flask>=3.1.0",
+    "flask-sqlalchemy>=3.1.1",
+    "google-api-python-client>=2.169.0",
+    "google-auth>=2.40.1",
+    "google-auth-oauthlib>=1.2.2",
+    "gunicorn>=23.0.0",
+    "notion-client>=2.3.0",
+    "psycopg2-binary>=2.9.10",
+    "pydantic>=2.11.4",
+    "pygithub>=2.6.1",
+    "pytest>=8.3.5",
+    "pytest-httpx>=0.35.0",
+    "uvicorn>=0.34.2",
+]
