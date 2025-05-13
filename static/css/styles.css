@@ -11,6 +11,17 @@
   --danger: #E32222;
 }
 
+:root[data-theme="light"] {
+  --primary-bg: #FFFFFF;
+  --secondary-bg: #F5F7FA;
+  --border-color: #E1E4E8;
+  --text-primary: #24292E;
+  --text-secondary: #586069;
+  --accent-blue: #0366D6;
+  --accent-purple: #6F42C1;
+  --danger: #CB2431;
+}
+
 body {
   background-color: var(--primary-bg);
   color: var(--text-primary);
