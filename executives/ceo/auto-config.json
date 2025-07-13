@@ -1,0 +1,82 @@
+{
+  "name": "CEO",
+  "localName": "ceo",
+  "type": "executive",
+  "path": "/Users/nickbianchi/MAIN/ai/exec/ceo",
+  "discovered": "2025-07-13T23:25:30.684Z",
+  "services": {
+    "api-service": {
+      "type": "javascript",
+      "path": "sys/api-service.js",
+      "discovered": true
+    }
+  },
+  "memoryConfig": {
+    "executive": "CLOUDECO",
+    "role": "Chief Executive Officer",
+    "memory": {
+      "assistant_id": "asst_U6DebcIE2x7XYc0HyJupcygD",
+      "type": "memory_v5",
+      "context_window": 128000,
+      "retention_policy": "strategic_permanent",
+      "storage": {
+        "neon": "primary",
+        "openai_vectors": "semantic_search",
+        "local_json": "backup"
+      },
+      "sharing": {
+        "executives": "strategic_directive",
+        "air_resources": "read_write",
+        "cross_executive": "directive_authority",
+        "board": "executive_summary"
+      },
+      "vector_store_id": "vs_ceo_cloudeco",
+      "memory_types": [
+        "episodic",
+        "semantic",
+        "procedural",
+        "strategic"
+      ],
+      "strategic_specialization": {
+        "focus_areas": [
+          "strategic_planning",
+          "executive_leadership",
+          "board_governance",
+          "business_direction"
+        ],
+        "decision_authority": "ultimate",
+        "cross_executive_oversight": true,
+        "data_retention": "permanent_strategic_records"
+      }
+    },
+    "integration": {
+      "neon_table": "ceo_memories",
+      "memory_bridge": "/sys/shared/memory/memory_v5_bridge.js",
+      "api_endpoint": "/api/memory/cloudeco"
+    }
+  },
+  "structure": {
+    "sys": {
+      "exists": true,
+      "path": "/Users/nickbianchi/MAIN/ai/exec/ceo/sys",
+      "modified": "2025-07-01T21:31:23.088Z"
+    },
+    "dev": {
+      "exists": true,
+      "path": "/Users/nickbianchi/MAIN/ai/exec/ceo/dev",
+      "modified": "2025-06-28T09:53:45.530Z"
+    },
+    "temp": {
+      "exists": true,
+      "path": "/Users/nickbianchi/MAIN/ai/exec/ceo/temp",
+      "modified": "2025-06-28T09:53:45.530Z"
+    },
+    "id": {
+      "exists": true,
+      "path": "/Users/nickbianchi/MAIN/ai/exec/ceo/id",
+      "modified": "2025-06-28T10:44:35.027Z"
+    }
+  },
+  "lastSync": "2025-07-13T23:25:32.384Z",
+  "source": "auto-discovered"
+}
