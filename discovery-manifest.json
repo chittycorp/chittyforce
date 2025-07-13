@@ -1,0 +1,853 @@
+{
+  "generated": "2025-07-13T23:25:30.676Z",
+  "chittyRoot": "/Users/nickbianchi/MAIN",
+  "paths": {
+    "executives": "/Users/nickbianchi/MAIN/ai/exec",
+    "agents": "/Users/nickbianchi/MAIN/ai/agents"
+  },
+  "discovery": {
+    "executives": [
+      {
+        "name": "CAO",
+        "localName": "cao",
+        "type": "executive",
+        "path": "/Users/nickbianchi/MAIN/ai/exec/cao",
+        "discovered": "2025-07-13T23:25:30.678Z",
+        "services": {
+          "automation": {
+            "type": "module",
+            "path": "sys/automation",
+            "discovered": true
+          },
+          "chittycaise": {
+            "type": "module",
+            "path": "sys/chittycaise",
+            "discovered": true
+          },
+          "concierge": {
+            "type": "module",
+            "path": "sys/concierge",
+            "discovered": true
+          },
+          "dashboard": {
+            "type": "module",
+            "path": "sys/dashboard",
+            "discovered": true
+          },
+          "dynamic-smart-mcp": {
+            "type": "module",
+            "path": "sys/dynamic-smart-mcp",
+            "discovered": true
+          },
+          "integrations": {
+            "type": "module",
+            "path": "sys/integrations",
+            "discovered": true
+          },
+          "resend-deploy": {
+            "type": "module",
+            "path": "sys/resend-deploy",
+            "discovered": true
+          },
+          "shared": {
+            "type": "module",
+            "path": "sys/shared",
+            "discovered": true
+          },
+          "templates": {
+            "type": "module",
+            "path": "sys/templates",
+            "discovered": true
+          }
+        },
+        "mcpBridge": {
+          "enabled": true,
+          "path": "/Users/nickbianchi/MAIN/ai/exec/cao/mcp-bridge",
+          "dependencies": {
+            "@modelcontextprotocol/sdk": "^1.0.0"
+          }
+        },
+        "memoryConfig": {
+          "executive": "CLOUDEAO",
+          "role": "Chief Administrative/Automation Officer",
+          "memory": {
+            "openai_assistant_id": "asst_hs4gH6YrhMwNUaf0vb37JANX",
+            "namespace": "cloudeao_cao",
+            "vector_store_id": null,
+            "capabilities": {
+              "binary_upload": true,
+              "cma_processing": true,
+              "long_term_storage": "neon",
+              "memory_type": "administrative_automation"
+            }
+          },
+          "integration": {
+            "neon_table": "executive_memories",
+            "memory_bridge": "/sys/shared/memory/memory_v5_bridge.js",
+            "api_endpoint": "/api/memory/cloudeao"
+          },
+          "legacy_note": "CLOUDETTE MEMORY in OpenAI"
+        },
+        "structure": {
+          "sys": {
+            "exists": true,
+            "path": "/Users/nickbianchi/MAIN/ai/exec/cao/sys",
+            "modified": "2025-07-13T23:23:03.864Z"
+          },
+          "dev": {
+            "exists": true,
+            "path": "/Users/nickbianchi/MAIN/ai/exec/cao/dev",
+            "modified": "2025-07-11T22:52:00.366Z"
+          },
+          "id": {
+            "exists": true,
+            "path": "/Users/nickbianchi/MAIN/ai/exec/cao/id",
+            "modified": "2025-07-01T04:04:47.505Z"
+          },
+          "mcp-bridge": {
+            "exists": true,
+            "path": "/Users/nickbianchi/MAIN/ai/exec/cao/mcp-bridge",
+            "modified": "2025-07-13T16:04:32.481Z"
+          }
+        }
+      },
+      {
+        "name": "CEO",
+        "localName": "ceo",
+        "type": "executive",
+        "path": "/Users/nickbianchi/MAIN/ai/exec/ceo",
+        "discovered": "2025-07-13T23:25:30.684Z",
+        "services": {
+          "api-service": {
+            "type": "javascript",
+            "path": "sys/api-service.js",
+            "discovered": true
+          }
+        },
+        "memoryConfig": {
+          "executive": "CLOUDECO",
+          "role": "Chief Executive Officer",
+          "memory": {
+            "assistant_id": "asst_U6DebcIE2x7XYc0HyJupcygD",
+            "type": "memory_v5",
+            "context_window": 128000,
+            "retention_policy": "strategic_permanent",
+            "storage": {
+              "neon": "primary",
+              "openai_vectors": "semantic_search",
+              "local_json": "backup"
+            },
+            "sharing": {
+              "executives": "strategic_directive",
+              "air_resources": "read_write",
+              "cross_executive": "directive_authority",
+              "board": "executive_summary"
+            },
+            "vector_store_id": "vs_ceo_cloudeco",
+            "memory_types": [
+              "episodic",
+              "semantic",
+              "procedural",
+              "strategic"
+            ],
+            "strategic_specialization": {
+              "focus_areas": [
+                "strategic_planning",
+                "executive_leadership",
+                "board_governance",
+                "business_direction"
+              ],
+              "decision_authority": "ultimate",
+              "cross_executive_oversight": true,
+              "data_retention": "permanent_strategic_records"
+            }
+          },
+          "integration": {
+            "neon_table": "ceo_memories",
+            "memory_bridge": "/sys/shared/memory/memory_v5_bridge.js",
+            "api_endpoint": "/api/memory/cloudeco"
+          }
+        },
+        "structure": {
+          "sys": {
+            "exists": true,
+            "path": "/Users/nickbianchi/MAIN/ai/exec/ceo/sys",
+            "modified": "2025-07-01T21:31:23.088Z"
+          },
+          "dev": {
+            "exists": true,
+            "path": "/Users/nickbianchi/MAIN/ai/exec/ceo/dev",
+            "modified": "2025-06-28T09:53:45.530Z"
+          },
+          "temp": {
+            "exists": true,
+            "path": "/Users/nickbianchi/MAIN/ai/exec/ceo/temp",
+            "modified": "2025-06-28T09:53:45.530Z"
+          },
+          "id": {
+            "exists": true,
+            "path": "/Users/nickbianchi/MAIN/ai/exec/ceo/id",
+            "modified": "2025-06-28T10:44:35.027Z"
+          }
+        }
+      },
+      {
+        "name": "CFO",
+        "localName": "cfo",
+        "type": "executive",
+        "path": "/Users/nickbianchi/MAIN/ai/exec/cfo",
+        "discovered": "2025-07-13T23:25:30.685Z",
+        "services": {
+          "api-service": {
+            "type": "javascript",
+            "path": "sys/api-service.js",
+            "discovered": true
+          },
+          "chittyfinance": {
+            "type": "module",
+            "path": "sys/chittyfinance",
+            "discovered": true
+          }
+        },
+        "mcpBridge": {
+          "enabled": true,
+          "path": "/Users/nickbianchi/MAIN/ai/exec/cfo/mcp-bridge",
+          "dependencies": {
+            "@modelcontextprotocol/sdk": "^1.0.0"
+          }
+        },
+        "memoryConfig": {
+          "executive": "CLOUDEFO",
+          "role": "Chief Financial Officer",
+          "memory": {
+            "assistant_id": "asst_cjYrAuq4E8AQozDj6Xzz84Yc",
+            "type": "memory_v5",
+            "context_window": 128000,
+            "retention_policy": "financial_permanent",
+            "storage": {
+              "neon": "primary",
+              "openai_vectors": "semantic_search",
+              "local_json": "backup"
+            },
+            "sharing": {
+              "executives": "financial_summary",
+              "air_resources": "read_write",
+              "cross_executive": "controlled"
+            },
+            "vector_store_id": "vs_cfo_cloudefo",
+            "memory_types": [
+              "episodic",
+              "semantic",
+              "procedural",
+              "strategic"
+            ],
+            "financial_specialization": {
+              "entities": [
+                "ARIBIA_LLC",
+                "IT_CAN_BE_LLC",
+                "JEAN_ARLENE_VENTURING_LLC"
+              ],
+              "focus_areas": [
+                "multi_entity_finance",
+                "property_revenue",
+                "compliance",
+                "banking"
+              ],
+              "data_retention": "permanent_financial_records"
+            }
+          },
+          "integration": {
+            "neon_table": "cfo_memories",
+            "memory_bridge": "/sys/shared/memory/memory_v5_bridge.js",
+            "api_endpoint": "/api/memory/cloudefo"
+          }
+        },
+        "structure": {
+          "sys": {
+            "exists": true,
+            "path": "/Users/nickbianchi/MAIN/ai/exec/cfo/sys",
+            "modified": "2025-07-11T22:26:26.650Z"
+          },
+          "dev": {
+            "exists": true,
+            "path": "/Users/nickbianchi/MAIN/ai/exec/cfo/dev",
+            "modified": "2025-07-01T04:00:33.184Z"
+          },
+          "temp": {
+            "exists": true,
+            "path": "/Users/nickbianchi/MAIN/ai/exec/cfo/temp",
+            "modified": "2025-07-01T04:55:23.282Z"
+          },
+          "id": {
+            "exists": true,
+            "path": "/Users/nickbianchi/MAIN/ai/exec/cfo/id",
+            "modified": "2025-07-01T04:04:49.869Z"
+          },
+          "mcp-bridge": {
+            "exists": true,
+            "path": "/Users/nickbianchi/MAIN/ai/exec/cfo/mcp-bridge",
+            "modified": "2025-07-13T16:04:32.483Z"
+          }
+        }
+      },
+      {
+        "name": "CIO",
+        "localName": "cio",
+        "type": "executive",
+        "path": "/Users/nickbianchi/MAIN/ai/exec/cio",
+        "discovered": "2025-07-13T23:25:30.693Z",
+        "services": {},
+        "mcpBridge": {
+          "enabled": true,
+          "path": "/Users/nickbianchi/MAIN/ai/exec/cio/mcp-bridge",
+          "dependencies": {
+            "@modelcontextprotocol/sdk": "^1.0.0"
+          }
+        },
+        "structure": {
+          "mcp-bridge": {
+            "exists": true,
+            "path": "/Users/nickbianchi/MAIN/ai/exec/cio/mcp-bridge",
+            "modified": "2025-07-13T16:04:32.484Z"
+          }
+        }
+      },
+      {
+        "name": "CMO",
+        "localName": "cmo",
+        "type": "executive",
+        "path": "/Users/nickbianchi/MAIN/ai/exec/cmo",
+        "discovered": "2025-07-13T23:25:30.694Z",
+        "services": {
+          "api-service": {
+            "type": "javascript",
+            "path": "sys/api-service.js",
+            "discovered": true
+          }
+        },
+        "mcpBridge": {
+          "enabled": true,
+          "path": "/Users/nickbianchi/MAIN/ai/exec/cmo/mcp-bridge",
+          "dependencies": {
+            "@modelcontextprotocol/sdk": "^1.0.0"
+          }
+        },
+        "memoryConfig": {
+          "executive": "CLOUDEMO",
+          "role": "Chief Marketing Officer",
+          "memory": {
+            "openai_assistant_id": "asst_cytoTn1hRG5dwc8hjg26fXM9",
+            "namespace": "cloudemo_cmo",
+            "vector_store_id": null,
+            "capabilities": {
+              "binary_upload": true,
+              "cma_processing": true,
+              "long_term_storage": "neon",
+              "memory_type": "marketing_campaigns"
+            }
+          },
+          "integration": {
+            "neon_table": "executive_memories",
+            "memory_bridge": "/sys/shared/memory/memory_v5_bridge.js",
+            "api_endpoint": "/api/memory/cloudemo"
+          }
+        },
+        "structure": {
+          "sys": {
+            "exists": true,
+            "path": "/Users/nickbianchi/MAIN/ai/exec/cmo/sys",
+            "modified": "2025-07-01T21:31:22.956Z"
+          },
+          "dev": {
+            "exists": true,
+            "path": "/Users/nickbianchi/MAIN/ai/exec/cmo/dev",
+            "modified": "2025-06-28T09:53:45.530Z"
+          },
+          "temp": {
+            "exists": true,
+            "path": "/Users/nickbianchi/MAIN/ai/exec/cmo/temp",
+            "modified": "2025-06-30T14:57:15.429Z"
+          },
+          "id": {
+            "exists": true,
+            "path": "/Users/nickbianchi/MAIN/ai/exec/cmo/id",
+            "modified": "2025-07-01T04:04:33.882Z"
+          },
+          "mcp-bridge": {
+            "exists": true,
+            "path": "/Users/nickbianchi/MAIN/ai/exec/cmo/mcp-bridge",
+            "modified": "2025-07-13T16:04:32.486Z"
+          }
+        }
+      },
+      {
+        "name": "COO",
+        "localName": "coo",
+        "type": "executive",
+        "path": "/Users/nickbianchi/MAIN/ai/exec/coo",
+        "discovered": "2025-07-13T23:25:30.697Z",
+        "services": {
+          "api-service": {
+            "type": "javascript",
+            "path": "sys/api-service.js",
+            "discovered": true
+          }
+        },
+        "memoryConfig": {
+          "executive": "CLOUDEOO",
+          "role": "Chief Operating Officer",
+          "memory": {
+            "openai_assistant_id": "asst_jj4cciM6w71iTAb9y7zCQmME",
+            "namespace": "cloudeoo_coo",
+            "vector_store_id": null,
+            "capabilities": {
+              "binary_upload": true,
+              "cma_processing": true,
+              "long_term_storage": "neon",
+              "memory_type": "operational_procedures"
+            }
+          },
+          "integration": {
+            "neon_table": "executive_memories",
+            "memory_bridge": "/sys/shared/memory/memory_v5_bridge.js",
+            "api_endpoint": "/api/memory/cloudeoo"
+          },
+          "legacy_note": "Previously CLOUDELYN in OpenAI"
+        },
+        "structure": {
+          "sys": {
+            "exists": true,
+            "path": "/Users/nickbianchi/MAIN/ai/exec/coo/sys",
+            "modified": "2025-07-01T21:31:23.019Z"
+          },
+          "dev": {
+            "exists": true,
+            "path": "/Users/nickbianchi/MAIN/ai/exec/coo/dev",
+            "modified": "2025-06-28T09:53:45.530Z"
+          },
+          "temp": {
+            "exists": true,
+            "path": "/Users/nickbianchi/MAIN/ai/exec/coo/temp",
+            "modified": "2025-06-28T09:53:45.530Z"
+          },
+          "id": {
+            "exists": true,
+            "path": "/Users/nickbianchi/MAIN/ai/exec/coo/id",
+            "modified": "2025-07-01T04:04:32.272Z"
+          }
+        }
+      },
+      {
+        "name": "COUNCIL",
+        "localName": "council",
+        "type": "executive",
+        "path": "/Users/nickbianchi/MAIN/ai/exec/council",
+        "discovered": "2025-07-13T23:25:30.698Z",
+        "services": {},
+        "structure": {}
+      },
+      {
+        "name": "CTO",
+        "localName": "cto",
+        "type": "executive",
+        "path": "/Users/nickbianchi/MAIN/ai/exec/cto",
+        "discovered": "2025-07-13T23:25:30.698Z",
+        "services": {},
+        "memoryConfig": {
+          "executive": "CLOUDETO",
+          "role": "Chief Technology Officer",
+          "memory": {
+            "openai_assistant_id": "asst_PobIZnA556lkKeME0yy6LYc6",
+            "namespace": "cloudeto_cto",
+            "vector_store_id": null,
+            "capabilities": {
+              "binary_upload": true,
+              "cma_processing": true,
+              "long_term_storage": "neon",
+              "memory_type": "technical_architecture"
+            }
+          },
+          "integration": {
+            "neon_table": "executive_memories",
+            "memory_bridge": "/sys/shared/memory/memory_v5_bridge.js",
+            "api_endpoint": "/api/memory/cloudeto"
+          },
+          "legacy_note": "SIR CLOUDE MEMORY in OpenAI"
+        },
+        "structure": {
+          "sys": {
+            "exists": true,
+            "path": "/Users/nickbianchi/MAIN/ai/exec/cto/sys",
+            "modified": "2025-06-30T19:12:41.323Z"
+          },
+          "dev": {
+            "exists": true,
+            "path": "/Users/nickbianchi/MAIN/ai/exec/cto/dev",
+            "modified": "2025-06-28T09:58:29.358Z"
+          },
+          "temp": {
+            "exists": true,
+            "path": "/Users/nickbianchi/MAIN/ai/exec/cto/temp",
+            "modified": "2025-06-28T09:58:29.358Z"
+          },
+          "id": {
+            "exists": true,
+            "path": "/Users/nickbianchi/MAIN/ai/exec/cto/id",
+            "modified": "2025-06-28T10:44:56.303Z"
+          }
+        }
+      },
+      {
+        "name": "GC",
+        "localName": "gc",
+        "type": "executive",
+        "path": "/Users/nickbianchi/MAIN/ai/exec/gc",
+        "discovered": "2025-07-13T23:25:30.698Z",
+        "services": {
+          "api-service": {
+            "type": "javascript",
+            "path": "sys/api-service.js",
+            "discovered": true
+          },
+          "business_formation": {
+            "type": "module",
+            "path": "sys/business_formation",
+            "discovered": true
+          },
+          "chittycaise": {
+            "type": "module",
+            "path": "sys/chittycaise",
+            "discovered": true
+          },
+          "chittycases": {
+            "type": "module",
+            "path": "sys/chittycases",
+            "discovered": true
+          },
+          "chittyprose": {
+            "type": "module",
+            "path": "sys/chittyprose",
+            "discovered": true
+          },
+          "contracts": {
+            "type": "module",
+            "path": "sys/contracts",
+            "discovered": true
+          }
+        },
+        "mcpBridge": {
+          "enabled": true,
+          "path": "/Users/nickbianchi/MAIN/ai/exec/gc/mcp-bridge",
+          "dependencies": {
+            "@modelcontextprotocol/sdk": "^1.0.0"
+          }
+        },
+        "memoryConfig": {
+          "executive": "CLOUDESQ",
+          "role": "General Counsel",
+          "memory": {
+            "openai_assistant_id": "asst_tkBVT2u44lFI2Sx8i4oxDUvk",
+            "namespace": "cloudesq_gc",
+            "vector_store_id": null,
+            "capabilities": {
+              "binary_upload": true,
+              "cma_processing": true,
+              "long_term_storage": "neon",
+              "memory_type": "legal_documents"
+            }
+          },
+          "integration": {
+            "neon_table": "executive_memories",
+            "memory_bridge": "/sys/shared/memory/memory_v5_bridge.js",
+            "api_endpoint": "/api/memory/cloudesq"
+          }
+        },
+        "structure": {
+          "sys": {
+            "exists": true,
+            "path": "/Users/nickbianchi/MAIN/ai/exec/gc/sys",
+            "modified": "2025-07-13T20:13:57.531Z"
+          },
+          "dev": {
+            "exists": true,
+            "path": "/Users/nickbianchi/MAIN/ai/exec/gc/dev",
+            "modified": "2025-07-09T20:24:07.466Z"
+          },
+          "temp": {
+            "exists": true,
+            "path": "/Users/nickbianchi/MAIN/ai/exec/gc/temp",
+            "modified": "2025-07-13T20:54:33.570Z"
+          },
+          "id": {
+            "exists": true,
+            "path": "/Users/nickbianchi/MAIN/ai/exec/gc/id",
+            "modified": "2025-07-01T04:04:44.788Z"
+          },
+          "mcp-bridge": {
+            "exists": true,
+            "path": "/Users/nickbianchi/MAIN/ai/exec/gc/mcp-bridge",
+            "modified": "2025-07-13T16:04:32.483Z"
+          }
+        }
+      },
+      {
+        "name": "LOGS",
+        "localName": "logs",
+        "type": "executive",
+        "path": "/Users/nickbianchi/MAIN/ai/exec/logs",
+        "discovered": "2025-07-13T23:25:30.703Z",
+        "services": {},
+        "structure": {}
+      },
+      {
+        "name": "SYSADMIN",
+        "localName": "sysadmin",
+        "type": "executive",
+        "path": "/Users/nickbianchi/MAIN/ai/exec/sysadmin",
+        "discovered": "2025-07-13T23:25:30.704Z",
+        "services": {},
+        "structure": {}
+      }
+    ],
+    "agents": [
+      {
+        "name": "agentsmith",
+        "type": "agent",
+        "path": "/Users/nickbianchi/MAIN/ai/agents/agentsmith",
+        "discovered": "2025-07-13T23:25:30.705Z",
+        "description": "Agent Smith - Matrix Protector & Cloud Orchestrator",
+        "tools": [
+          {
+            "name": "agent-smith-worker.js",
+            "type": "js",
+            "path": "/Users/nickbianchi/MAIN/ai/agents/agentsmith/agent-smith-worker.js",
+            "size": 12009,
+            "modified": "2025-07-13T22:05:26.028Z"
+          },
+          {
+            "name": "file_integrity_monitor.js",
+            "type": "js",
+            "path": "/Users/nickbianchi/MAIN/ai/agents/agentsmith/file_integrity_monitor.js",
+            "size": 32517,
+            "modified": "2025-07-13T16:52:17.347Z"
+          },
+          {
+            "name": "konmari_matrix.js",
+            "type": "js",
+            "path": "/Users/nickbianchi/MAIN/ai/agents/agentsmith/konmari_matrix.js",
+            "size": 7066,
+            "modified": "2025-07-03T09:21:31.616Z"
+          },
+          {
+            "name": "matrix-dashboard.js",
+            "type": "js",
+            "path": "/Users/nickbianchi/MAIN/ai/agents/agentsmith/matrix-dashboard.js",
+            "size": 22328,
+            "modified": "2025-07-13T20:22:37.343Z"
+          },
+          {
+            "name": "shadow_org_detector.js",
+            "type": "js",
+            "path": "/Users/nickbianchi/MAIN/ai/agents/agentsmith/shadow_org_detector.js",
+            "size": 10712,
+            "modified": "2025-07-03T09:26:53.513Z"
+          },
+          {
+            "name": "source_purity_guardian.js",
+            "type": "js",
+            "path": "/Users/nickbianchi/MAIN/ai/agents/agentsmith/source_purity_guardian.js",
+            "size": 9878,
+            "modified": "2025-07-03T09:23:06.062Z"
+          }
+        ],
+        "config": {
+          "type": "module",
+          "name": "agent-smith-matrix-guardian",
+          "version": "3.0.0",
+          "description": "Agent Smith - Independent Matrix Guardian for ChittyOS",
+          "main": "file_integrity_monitor.js",
+          "scripts": {
+            "start": "node file_integrity_monitor.js",
+            "dashboard": "node file_integrity_monitor.js --dashboard",
+            "dev": "wrangler dev",
+            "deploy": "wrangler deploy",
+            "deploy:staging": "wrangler deploy --env staging",
+            "logs": "wrangler tail",
+            "secret:set": "wrangler secret put",
+            "test": "node test-worker.js"
+          },
+          "dependencies": {
+            "@neondatabase/serverless": "^1.0.1",
+            "express": "^5.1.0",
+            "ws": "^8.18.3"
+          },
+          "devDependencies": {
+            "wrangler": "^3.0.0"
+          },
+          "keywords": [
+            "agent-smith",
+            "matrix",
+            "guardian",
+            "chittyos",
+            "cloudflare"
+          ],
+          "author": "ChittyOS",
+          "license": "MIT"
+        }
+      },
+      {
+        "name": "cloudexter",
+        "type": "agent",
+        "path": "/Users/nickbianchi/MAIN/ai/agents/cloudexter",
+        "discovered": "2025-07-13T23:25:30.706Z",
+        "tools": [
+          {
+            "name": "agent-smith-dual-mode-detector.js",
+            "type": "js",
+            "path": "/Users/nickbianchi/MAIN/ai/agents/cloudexter/agent-smith-dual-mode-detector.js",
+            "size": 9158,
+            "modified": "2025-07-09T01:55:43.291Z"
+          },
+          {
+            "name": "alternative-communication-channels.js",
+            "type": "js",
+            "path": "/Users/nickbianchi/MAIN/ai/agents/cloudexter/alternative-communication-channels.js",
+            "size": 4981,
+            "modified": "2025-07-09T20:40:57.844Z"
+          },
+          {
+            "name": "chaos-testing-framework.js",
+            "type": "js",
+            "path": "/Users/nickbianchi/MAIN/ai/agents/cloudexter/chaos-testing-framework.js",
+            "size": 21343,
+            "modified": "2025-07-09T19:42:42.850Z"
+          },
+          {
+            "name": "chaos_toolkit.js",
+            "type": "js",
+            "path": "/Users/nickbianchi/MAIN/ai/agents/cloudexter/chaos_toolkit.js",
+            "size": 7896,
+            "modified": "2025-07-03T09:13:40.801Z"
+          },
+          {
+            "name": "communication-circuit-breaker.js",
+            "type": "js",
+            "path": "/Users/nickbianchi/MAIN/ai/agents/cloudexter/communication-circuit-breaker.js",
+            "size": 2444,
+            "modified": "2025-07-09T20:40:57.818Z"
+          },
+          {
+            "name": "communication-health-monitor.js",
+            "type": "js",
+            "path": "/Users/nickbianchi/MAIN/ai/agents/cloudexter/communication-health-monitor.js",
+            "size": 6283,
+            "modified": "2025-07-09T20:40:57.850Z"
+          },
+          {
+            "name": "communication-resilience-fixer.js",
+            "type": "js",
+            "path": "/Users/nickbianchi/MAIN/ai/agents/cloudexter/communication-resilience-fixer.js",
+            "size": 46534,
+            "modified": "2025-07-09T20:39:29.706Z"
+          },
+          {
+            "name": "communication-retry-manager.js",
+            "type": "js",
+            "path": "/Users/nickbianchi/MAIN/ai/agents/cloudexter/communication-retry-manager.js",
+            "size": 1847,
+            "modified": "2025-07-09T20:40:57.833Z"
+          },
+          {
+            "name": "continuous-chaos-pipeline.js",
+            "type": "js",
+            "path": "/Users/nickbianchi/MAIN/ai/agents/cloudexter/continuous-chaos-pipeline.js",
+            "size": 25861,
+            "modified": "2025-07-13T15:48:25.242Z"
+          },
+          {
+            "name": "creative_chaos_mcp.js",
+            "type": "js",
+            "path": "/Users/nickbianchi/MAIN/ai/agents/cloudexter/creative_chaos_mcp.js",
+            "size": 6445,
+            "modified": "2025-07-03T09:20:22.570Z"
+          },
+          {
+            "name": "degraded-mode-handler.js",
+            "type": "js",
+            "path": "/Users/nickbianchi/MAIN/ai/agents/cloudexter/degraded-mode-handler.js",
+            "size": 5355,
+            "modified": "2025-07-09T20:40:57.846Z"
+          },
+          {
+            "name": "emergency-protocol.js",
+            "type": "js",
+            "path": "/Users/nickbianchi/MAIN/ai/agents/cloudexter/emergency-protocol.js",
+            "size": 8982,
+            "modified": "2025-07-09T20:40:57.848Z"
+          },
+          {
+            "name": "executive-chaos-deployment.js",
+            "type": "js",
+            "path": "/Users/nickbianchi/MAIN/ai/agents/cloudexter/executive-chaos-deployment.js",
+            "size": 26421,
+            "modified": "2025-07-09T20:07:52.028Z"
+          },
+          {
+            "name": "financial-chaos-engine.js",
+            "type": "js",
+            "path": "/Users/nickbianchi/MAIN/ai/agents/cloudexter/financial-chaos-engine.js",
+            "size": 31044,
+            "modified": "2025-07-09T20:55:49.192Z"
+          },
+          {
+            "name": "integration-layer-resilience-fix.js",
+            "type": "js",
+            "path": "/Users/nickbianchi/MAIN/ai/agents/cloudexter/integration-layer-resilience-fix.js",
+            "size": 28510,
+            "modified": "2025-07-13T16:02:04.807Z"
+          },
+          {
+            "name": "integration-resilience.js",
+            "type": "js",
+            "path": "/Users/nickbianchi/MAIN/ai/agents/cloudexter/integration-resilience.js",
+            "size": 1315,
+            "modified": "2025-07-13T16:04:32.487Z"
+          },
+          {
+            "name": "setup_chaos_tracking.js",
+            "type": "js",
+            "path": "/Users/nickbianchi/MAIN/ai/agents/cloudexter/setup_chaos_tracking.js",
+            "size": 4578,
+            "modified": "2025-07-03T09:12:46.549Z"
+          },
+          {
+            "name": "test-chittychain-chaos.js",
+            "type": "js",
+            "path": "/Users/nickbianchi/MAIN/ai/agents/cloudexter/test-chittychain-chaos.js",
+            "size": 2795,
+            "modified": "2025-07-09T01:48:13.907Z"
+          },
+          {
+            "name": "universal-dual-mode-migrator.js",
+            "type": "js",
+            "path": "/Users/nickbianchi/MAIN/ai/agents/cloudexter/universal-dual-mode-migrator.js",
+            "size": 9135,
+            "modified": "2025-07-09T02:24:17.626Z"
+          }
+        ]
+      },
+      {
+        "name": "msmanners",
+        "type": "agent",
+        "path": "/Users/nickbianchi/MAIN/ai/agents/msmanners",
+        "discovered": "2025-07-13T23:25:30.707Z",
+        "tools": []
+      }
+    ]
+  },
+  "sync": {
+    "strategy": "discovery-based",
+    "conflicts": "auto-resolve",
+    "backup": "before-sync"
+  }
+}
