@@ -1,0 +1,101 @@
+{
+  "name": "CFO",
+  "localName": "cfo",
+  "type": "executive",
+  "path": "/Users/nickbianchi/MAIN/ai/exec/cfo",
+  "discovered": "2025-07-13T23:25:30.685Z",
+  "services": {
+    "api-service": {
+      "type": "javascript",
+      "path": "sys/api-service.js",
+      "discovered": true
+    },
+    "chittyfinance": {
+      "type": "module",
+      "path": "sys/chittyfinance",
+      "discovered": true
+    }
+  },
+  "mcpBridge": {
+    "enabled": true,
+    "path": "/Users/nickbianchi/MAIN/ai/exec/cfo/mcp-bridge",
+    "dependencies": {
+      "@modelcontextprotocol/sdk": "^1.0.0"
+    }
+  },
+  "memoryConfig": {
+    "executive": "CLOUDEFO",
+    "role": "Chief Financial Officer",
+    "memory": {
+      "assistant_id": "asst_cjYrAuq4E8AQozDj6Xzz84Yc",
+      "type": "memory_v5",
+      "context_window": 128000,
+      "retention_policy": "financial_permanent",
+      "storage": {
+        "neon": "primary",
+        "openai_vectors": "semantic_search",
+        "local_json": "backup"
+      },
+      "sharing": {
+        "executives": "financial_summary",
+        "air_resources": "read_write",
+        "cross_executive": "controlled"
+      },
+      "vector_store_id": "vs_cfo_cloudefo",
+      "memory_types": [
+        "episodic",
+        "semantic",
+        "procedural",
+        "strategic"
+      ],
+      "financial_specialization": {
+        "entities": [
+          "ARIBIA_LLC",
+          "IT_CAN_BE_LLC",
+          "JEAN_ARLENE_VENTURING_LLC"
+        ],
+        "focus_areas": [
+          "multi_entity_finance",
+          "property_revenue",
+          "compliance",
+          "banking"
+        ],
+        "data_retention": "permanent_financial_records"
+      }
+    },
+    "integration": {
+      "neon_table": "cfo_memories",
+      "memory_bridge": "/sys/shared/memory/memory_v5_bridge.js",
+      "api_endpoint": "/api/memory/cloudefo"
+    }
+  },
+  "structure": {
+    "sys": {
+      "exists": true,
+      "path": "/Users/nickbianchi/MAIN/ai/exec/cfo/sys",
+      "modified": "2025-07-11T22:26:26.650Z"
+    },
+    "dev": {
+      "exists": true,
+      "path": "/Users/nickbianchi/MAIN/ai/exec/cfo/dev",
+      "modified": "2025-07-01T04:00:33.184Z"
+    },
+    "temp": {
+      "exists": true,
+      "path": "/Users/nickbianchi/MAIN/ai/exec/cfo/temp",
+      "modified": "2025-07-01T04:55:23.282Z"
+    },
+    "id": {
+      "exists": true,
+      "path": "/Users/nickbianchi/MAIN/ai/exec/cfo/id",
+      "modified": "2025-07-01T04:04:49.869Z"
+    },
+    "mcp-bridge": {
+      "exists": true,
+      "path": "/Users/nickbianchi/MAIN/ai/exec/cfo/mcp-bridge",
+      "modified": "2025-07-13T16:04:32.483Z"
+    }
+  },
+  "lastSync": "2025-07-13T23:25:32.937Z",
+  "source": "auto-discovered"
+}
