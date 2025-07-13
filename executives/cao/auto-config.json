@@ -1,0 +1,106 @@
+{
+  "name": "CAO",
+  "localName": "cao",
+  "type": "executive",
+  "path": "/Users/nickbianchi/MAIN/ai/exec/cao",
+  "discovered": "2025-07-13T23:25:30.678Z",
+  "services": {
+    "automation": {
+      "type": "module",
+      "path": "sys/automation",
+      "discovered": true
+    },
+    "chittycaise": {
+      "type": "module",
+      "path": "sys/chittycaise",
+      "discovered": true
+    },
+    "concierge": {
+      "type": "module",
+      "path": "sys/concierge",
+      "discovered": true
+    },
+    "dashboard": {
+      "type": "module",
+      "path": "sys/dashboard",
+      "discovered": true
+    },
+    "dynamic-smart-mcp": {
+      "type": "module",
+      "path": "sys/dynamic-smart-mcp",
+      "discovered": true
+    },
+    "integrations": {
+      "type": "module",
+      "path": "sys/integrations",
+      "discovered": true
+    },
+    "resend-deploy": {
+      "type": "module",
+      "path": "sys/resend-deploy",
+      "discovered": true
+    },
+    "shared": {
+      "type": "module",
+      "path": "sys/shared",
+      "discovered": true
+    },
+    "templates": {
+      "type": "module",
+      "path": "sys/templates",
+      "discovered": true
+    }
+  },
+  "mcpBridge": {
+    "enabled": true,
+    "path": "/Users/nickbianchi/MAIN/ai/exec/cao/mcp-bridge",
+    "dependencies": {
+      "@modelcontextprotocol/sdk": "^1.0.0"
+    }
+  },
+  "memoryConfig": {
+    "executive": "CLOUDEAO",
+    "role": "Chief Administrative/Automation Officer",
+    "memory": {
+      "openai_assistant_id": "asst_hs4gH6YrhMwNUaf0vb37JANX",
+      "namespace": "cloudeao_cao",
+      "vector_store_id": null,
+      "capabilities": {
+        "binary_upload": true,
+        "cma_processing": true,
+        "long_term_storage": "neon",
+        "memory_type": "administrative_automation"
+      }
+    },
+    "integration": {
+      "neon_table": "executive_memories",
+      "memory_bridge": "/sys/shared/memory/memory_v5_bridge.js",
+      "api_endpoint": "/api/memory/cloudeao"
+    },
+    "legacy_note": "CLOUDETTE MEMORY in OpenAI"
+  },
+  "structure": {
+    "sys": {
+      "exists": true,
+      "path": "/Users/nickbianchi/MAIN/ai/exec/cao/sys",
+      "modified": "2025-07-13T23:23:03.864Z"
+    },
+    "dev": {
+      "exists": true,
+      "path": "/Users/nickbianchi/MAIN/ai/exec/cao/dev",
+      "modified": "2025-07-11T22:52:00.366Z"
+    },
+    "id": {
+      "exists": true,
+      "path": "/Users/nickbianchi/MAIN/ai/exec/cao/id",
+      "modified": "2025-07-01T04:04:47.505Z"
+    },
+    "mcp-bridge": {
+      "exists": true,
+      "path": "/Users/nickbianchi/MAIN/ai/exec/cao/mcp-bridge",
+      "modified": "2025-07-13T16:04:32.481Z"
+    }
+  },
+  "lastSync": "2025-07-13T23:25:31.722Z",
+  "source": "auto-discovered"
+}
