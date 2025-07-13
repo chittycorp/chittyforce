@@ -1,0 +1,9 @@
+{
+  "name": "msmanners",
+  "type": "agent",
+  "path": "/Users/nickbianchi/MAIN/ai/agents/msmanners",
+  "discovered": "2025-07-13T23:25:30.707Z",
+  "tools": [],
+  "lastSync": "2025-07-13T23:25:39.079Z",
+  "source": "auto-discovered"
+}
