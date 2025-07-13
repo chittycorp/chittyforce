@@ -1,0 +1,53 @@
+{
+  "name": "CTO",
+  "localName": "cto",
+  "type": "executive",
+  "path": "/Users/nickbianchi/MAIN/ai/exec/cto",
+  "discovered": "2025-07-13T23:25:30.698Z",
+  "services": {},
+  "memoryConfig": {
+    "executive": "CLOUDETO",
+    "role": "Chief Technology Officer",
+    "memory": {
+      "openai_assistant_id": "asst_PobIZnA556lkKeME0yy6LYc6",
+      "namespace": "cloudeto_cto",
+      "vector_store_id": null,
+      "capabilities": {
+        "binary_upload": true,
+        "cma_processing": true,
+        "long_term_storage": "neon",
+        "memory_type": "technical_architecture"
+      }
+    },
+    "integration": {
+      "neon_table": "executive_memories",
+      "memory_bridge": "/sys/shared/memory/memory_v5_bridge.js",
+      "api_endpoint": "/api/memory/cloudeto"
+    },
+    "legacy_note": "SIR CLOUDE MEMORY in OpenAI"
+  },
+  "structure": {
+    "sys": {
+      "exists": true,
+      "path": "/Users/nickbianchi/MAIN/ai/exec/cto/sys",
+      "modified": "2025-06-30T19:12:41.323Z"
+    },
+    "dev": {
+      "exists": true,
+      "path": "/Users/nickbianchi/MAIN/ai/exec/cto/dev",
+      "modified": "2025-06-28T09:58:29.358Z"
+    },
+    "temp": {
+      "exists": true,
+      "path": "/Users/nickbianchi/MAIN/ai/exec/cto/temp",
+      "modified": "2025-06-28T09:58:29.358Z"
+    },
+    "id": {
+      "exists": true,
+      "path": "/Users/nickbianchi/MAIN/ai/exec/cto/id",
+      "modified": "2025-06-28T10:44:56.303Z"
+    }
+  },
+  "lastSync": "2025-07-13T23:25:35.747Z",
+  "source": "auto-discovered"
+}
