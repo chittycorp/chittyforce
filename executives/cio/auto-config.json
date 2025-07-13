@@ -1,0 +1,24 @@
+{
+  "name": "CIO",
+  "localName": "cio",
+  "type": "executive",
+  "path": "/Users/nickbianchi/MAIN/ai/exec/cio",
+  "discovered": "2025-07-13T23:25:30.693Z",
+  "services": {},
+  "mcpBridge": {
+    "enabled": true,
+    "path": "/Users/nickbianchi/MAIN/ai/exec/cio/mcp-bridge",
+    "dependencies": {
+      "@modelcontextprotocol/sdk": "^1.0.0"
+    }
+  },
+  "structure": {
+    "mcp-bridge": {
+      "exists": true,
+      "path": "/Users/nickbianchi/MAIN/ai/exec/cio/mcp-bridge",
+      "modified": "2025-07-13T16:04:32.484Z"
+    }
+  },
+  "lastSync": "2025-07-13T23:25:33.522Z",
+  "source": "auto-discovered"
+}
