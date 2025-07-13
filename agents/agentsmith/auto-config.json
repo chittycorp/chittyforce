@@ -1,0 +1,87 @@
+{
+  "name": "agentsmith",
+  "type": "agent",
+  "path": "/Users/nickbianchi/MAIN/ai/agents/agentsmith",
+  "discovered": "2025-07-13T23:25:30.705Z",
+  "description": "Agent Smith - Matrix Protector & Cloud Orchestrator",
+  "tools": [
+    {
+      "name": "agent-smith-worker.js",
+      "type": "js",
+      "path": "/Users/nickbianchi/MAIN/ai/agents/agentsmith/agent-smith-worker.js",
+      "size": 12009,
+      "modified": "2025-07-13T22:05:26.028Z"
+    },
+    {
+      "name": "file_integrity_monitor.js",
+      "type": "js",
+      "path": "/Users/nickbianchi/MAIN/ai/agents/agentsmith/file_integrity_monitor.js",
+      "size": 32517,
+      "modified": "2025-07-13T16:52:17.347Z"
+    },
+    {
+      "name": "konmari_matrix.js",
+      "type": "js",
+      "path": "/Users/nickbianchi/MAIN/ai/agents/agentsmith/konmari_matrix.js",
+      "size": 7066,
+      "modified": "2025-07-03T09:21:31.616Z"
+    },
+    {
+      "name": "matrix-dashboard.js",
+      "type": "js",
+      "path": "/Users/nickbianchi/MAIN/ai/agents/agentsmith/matrix-dashboard.js",
+      "size": 22328,
+      "modified": "2025-07-13T20:22:37.343Z"
+    },
+    {
+      "name": "shadow_org_detector.js",
+      "type": "js",
+      "path": "/Users/nickbianchi/MAIN/ai/agents/agentsmith/shadow_org_detector.js",
+      "size": 10712,
+      "modified": "2025-07-03T09:26:53.513Z"
+    },
+    {
+      "name": "source_purity_guardian.js",
+      "type": "js",
+      "path": "/Users/nickbianchi/MAIN/ai/agents/agentsmith/source_purity_guardian.js",
+      "size": 9878,
+      "modified": "2025-07-03T09:23:06.062Z"
+    }
+  ],
+  "config": {
+    "type": "module",
+    "name": "agent-smith-matrix-guardian",
+    "version": "3.0.0",
+    "description": "Agent Smith - Independent Matrix Guardian for ChittyOS",
+    "main": "file_integrity_monitor.js",
+    "scripts": {
+      "start": "node file_integrity_monitor.js",
+      "dashboard": "node file_integrity_monitor.js --dashboard",
+      "dev": "wrangler dev",
+      "deploy": "wrangler deploy",
+      "deploy:staging": "wrangler deploy --env staging",
+      "logs": "wrangler tail",
+      "secret:set": "wrangler secret put",
+      "test": "node test-worker.js"
+    },
+    "dependencies": {
+      "@neondatabase/serverless": "^1.0.1",
+      "express": "^5.1.0",
+      "ws": "^8.18.3"
+    },
+    "devDependencies": {
+      "wrangler": "^3.0.0"
+    },
+    "keywords": [
+      "agent-smith",
+      "matrix",
+      "guardian",
+      "chittyos",
+      "cloudflare"
+    ],
+    "author": "ChittyOS",
+    "license": "MIT"
+  },
+  "lastSync": "2025-07-13T23:25:37.899Z",
+  "source": "auto-discovered"
+}
