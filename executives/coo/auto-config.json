@@ -1,0 +1,59 @@
+{
+  "name": "COO",
+  "localName": "coo",
+  "type": "executive",
+  "path": "/Users/nickbianchi/MAIN/ai/exec/coo",
+  "discovered": "2025-07-13T23:25:30.697Z",
+  "services": {
+    "api-service": {
+      "type": "javascript",
+      "path": "sys/api-service.js",
+      "discovered": true
+    }
+  },
+  "memoryConfig": {
+    "executive": "CLOUDEOO",
+    "role": "Chief Operating Officer",
+    "memory": {
+      "openai_assistant_id": "asst_jj4cciM6w71iTAb9y7zCQmME",
+      "namespace": "cloudeoo_coo",
+      "vector_store_id": null,
+      "capabilities": {
+        "binary_upload": true,
+        "cma_processing": true,
+        "long_term_storage": "neon",
+        "memory_type": "operational_procedures"
+      }
+    },
+    "integration": {
+      "neon_table": "executive_memories",
+      "memory_bridge": "/sys/shared/memory/memory_v5_bridge.js",
+      "api_endpoint": "/api/memory/cloudeoo"
+    },
+    "legacy_note": "Previously CLOUDELYN in OpenAI"
+  },
+  "structure": {
+    "sys": {
+      "exists": true,
+      "path": "/Users/nickbianchi/MAIN/ai/exec/coo/sys",
+      "modified": "2025-07-01T21:31:23.019Z"
+    },
+    "dev": {
+      "exists": true,
+      "path": "/Users/nickbianchi/MAIN/ai/exec/coo/dev",
+      "modified": "2025-06-28T09:53:45.530Z"
+    },
+    "temp": {
+      "exists": true,
+      "path": "/Users/nickbianchi/MAIN/ai/exec/coo/temp",
+      "modified": "2025-06-28T09:53:45.530Z"
+    },
+    "id": {
+      "exists": true,
+      "path": "/Users/nickbianchi/MAIN/ai/exec/coo/id",
+      "modified": "2025-07-01T04:04:32.272Z"
+    }
+  },
+  "lastSync": "2025-07-13T23:25:34.744Z",
+  "source": "auto-discovered"
+}
