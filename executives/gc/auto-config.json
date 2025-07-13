@@ -1,0 +1,95 @@
+{
+  "name": "GC",
+  "localName": "gc",
+  "type": "executive",
+  "path": "/Users/nickbianchi/MAIN/ai/exec/gc",
+  "discovered": "2025-07-13T23:25:30.698Z",
+  "services": {
+    "api-service": {
+      "type": "javascript",
+      "path": "sys/api-service.js",
+      "discovered": true
+    },
+    "business_formation": {
+      "type": "module",
+      "path": "sys/business_formation",
+      "discovered": true
+    },
+    "chittycaise": {
+      "type": "module",
+      "path": "sys/chittycaise",
+      "discovered": true
+    },
+    "chittycases": {
+      "type": "module",
+      "path": "sys/chittycases",
+      "discovered": true
+    },
+    "chittyprose": {
+      "type": "module",
+      "path": "sys/chittyprose",
+      "discovered": true
+    },
+    "contracts": {
+      "type": "module",
+      "path": "sys/contracts",
+      "discovered": true
+    }
+  },
+  "mcpBridge": {
+    "enabled": true,
+    "path": "/Users/nickbianchi/MAIN/ai/exec/gc/mcp-bridge",
+    "dependencies": {
+      "@modelcontextprotocol/sdk": "^1.0.0"
+    }
+  },
+  "memoryConfig": {
+    "executive": "CLOUDESQ",
+    "role": "General Counsel",
+    "memory": {
+      "openai_assistant_id": "asst_tkBVT2u44lFI2Sx8i4oxDUvk",
+      "namespace": "cloudesq_gc",
+      "vector_store_id": null,
+      "capabilities": {
+        "binary_upload": true,
+        "cma_processing": true,
+        "long_term_storage": "neon",
+        "memory_type": "legal_documents"
+      }
+    },
+    "integration": {
+      "neon_table": "executive_memories",
+      "memory_bridge": "/sys/shared/memory/memory_v5_bridge.js",
+      "api_endpoint": "/api/memory/cloudesq"
+    }
+  },
+  "structure": {
+    "sys": {
+      "exists": true,
+      "path": "/Users/nickbianchi/MAIN/ai/exec/gc/sys",
+      "modified": "2025-07-13T20:13:57.531Z"
+    },
+    "dev": {
+      "exists": true,
+      "path": "/Users/nickbianchi/MAIN/ai/exec/gc/dev",
+      "modified": "2025-07-09T20:24:07.466Z"
+    },
+    "temp": {
+      "exists": true,
+      "path": "/Users/nickbianchi/MAIN/ai/exec/gc/temp",
+      "modified": "2025-07-13T20:54:33.570Z"
+    },
+    "id": {
+      "exists": true,
+      "path": "/Users/nickbianchi/MAIN/ai/exec/gc/id",
+      "modified": "2025-07-01T04:04:44.788Z"
+    },
+    "mcp-bridge": {
+      "exists": true,
+      "path": "/Users/nickbianchi/MAIN/ai/exec/gc/mcp-bridge",
+      "modified": "2025-07-13T16:04:32.483Z"
+    }
+  },
+  "lastSync": "2025-07-13T23:25:36.374Z",
+  "source": "auto-discovered"
+}
