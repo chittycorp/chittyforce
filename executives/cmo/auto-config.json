@@ -1,0 +1,70 @@
+{
+  "name": "CMO",
+  "localName": "cmo",
+  "type": "executive",
+  "path": "/Users/nickbianchi/MAIN/ai/exec/cmo",
+  "discovered": "2025-07-13T23:25:30.694Z",
+  "services": {
+    "api-service": {
+      "type": "javascript",
+      "path": "sys/api-service.js",
+      "discovered": true
+    }
+  },
+  "mcpBridge": {
+    "enabled": true,
+    "path": "/Users/nickbianchi/MAIN/ai/exec/cmo/mcp-bridge",
+    "dependencies": {
+      "@modelcontextprotocol/sdk": "^1.0.0"
+    }
+  },
+  "memoryConfig": {
+    "executive": "CLOUDEMO",
+    "role": "Chief Marketing Officer",
+    "memory": {
+      "openai_assistant_id": "asst_cytoTn1hRG5dwc8hjg26fXM9",
+      "namespace": "cloudemo_cmo",
+      "vector_store_id": null,
+      "capabilities": {
+        "binary_upload": true,
+        "cma_processing": true,
+        "long_term_storage": "neon",
+        "memory_type": "marketing_campaigns"
+      }
+    },
+    "integration": {
+      "neon_table": "executive_memories",
+      "memory_bridge": "/sys/shared/memory/memory_v5_bridge.js",
+      "api_endpoint": "/api/memory/cloudemo"
+    }
+  },
+  "structure": {
+    "sys": {
+      "exists": true,
+      "path": "/Users/nickbianchi/MAIN/ai/exec/cmo/sys",
+      "modified": "2025-07-01T21:31:22.956Z"
+    },
+    "dev": {
+      "exists": true,
+      "path": "/Users/nickbianchi/MAIN/ai/exec/cmo/dev",
+      "modified": "2025-06-28T09:53:45.530Z"
+    },
+    "temp": {
+      "exists": true,
+      "path": "/Users/nickbianchi/MAIN/ai/exec/cmo/temp",
+      "modified": "2025-06-30T14:57:15.429Z"
+    },
+    "id": {
+      "exists": true,
+      "path": "/Users/nickbianchi/MAIN/ai/exec/cmo/id",
+      "modified": "2025-07-01T04:04:33.882Z"
+    },
+    "mcp-bridge": {
+      "exists": true,
+      "path": "/Users/nickbianchi/MAIN/ai/exec/cmo/mcp-bridge",
+      "modified": "2025-07-13T16:04:32.486Z"
+    }
+  },
+  "lastSync": "2025-07-13T23:25:34.130Z",
+  "source": "auto-discovered"
+}
