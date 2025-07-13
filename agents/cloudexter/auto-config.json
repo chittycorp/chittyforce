@@ -1,0 +1,143 @@
+{
+  "name": "cloudexter",
+  "type": "agent",
+  "path": "/Users/nickbianchi/MAIN/ai/agents/cloudexter",
+  "discovered": "2025-07-13T23:25:30.706Z",
+  "tools": [
+    {
+      "name": "agent-smith-dual-mode-detector.js",
+      "type": "js",
+      "path": "/Users/nickbianchi/MAIN/ai/agents/cloudexter/agent-smith-dual-mode-detector.js",
+      "size": 9158,
+      "modified": "2025-07-09T01:55:43.291Z"
+    },
+    {
+      "name": "alternative-communication-channels.js",
+      "type": "js",
+      "path": "/Users/nickbianchi/MAIN/ai/agents/cloudexter/alternative-communication-channels.js",
+      "size": 4981,
+      "modified": "2025-07-09T20:40:57.844Z"
+    },
+    {
+      "name": "chaos-testing-framework.js",
+      "type": "js",
+      "path": "/Users/nickbianchi/MAIN/ai/agents/cloudexter/chaos-testing-framework.js",
+      "size": 21343,
+      "modified": "2025-07-09T19:42:42.850Z"
+    },
+    {
+      "name": "chaos_toolkit.js",
+      "type": "js",
+      "path": "/Users/nickbianchi/MAIN/ai/agents/cloudexter/chaos_toolkit.js",
+      "size": 7896,
+      "modified": "2025-07-03T09:13:40.801Z"
+    },
+    {
+      "name": "communication-circuit-breaker.js",
+      "type": "js",
+      "path": "/Users/nickbianchi/MAIN/ai/agents/cloudexter/communication-circuit-breaker.js",
+      "size": 2444,
+      "modified": "2025-07-09T20:40:57.818Z"
+    },
+    {
+      "name": "communication-health-monitor.js",
+      "type": "js",
+      "path": "/Users/nickbianchi/MAIN/ai/agents/cloudexter/communication-health-monitor.js",
+      "size": 6283,
+      "modified": "2025-07-09T20:40:57.850Z"
+    },
+    {
+      "name": "communication-resilience-fixer.js",
+      "type": "js",
+      "path": "/Users/nickbianchi/MAIN/ai/agents/cloudexter/communication-resilience-fixer.js",
+      "size": 46534,
+      "modified": "2025-07-09T20:39:29.706Z"
+    },
+    {
+      "name": "communication-retry-manager.js",
+      "type": "js",
+      "path": "/Users/nickbianchi/MAIN/ai/agents/cloudexter/communication-retry-manager.js",
+      "size": 1847,
+      "modified": "2025-07-09T20:40:57.833Z"
+    },
+    {
+      "name": "continuous-chaos-pipeline.js",
+      "type": "js",
+      "path": "/Users/nickbianchi/MAIN/ai/agents/cloudexter/continuous-chaos-pipeline.js",
+      "size": 25861,
+      "modified": "2025-07-13T15:48:25.242Z"
+    },
+    {
+      "name": "creative_chaos_mcp.js",
+      "type": "js",
+      "path": "/Users/nickbianchi/MAIN/ai/agents/cloudexter/creative_chaos_mcp.js",
+      "size": 6445,
+      "modified": "2025-07-03T09:20:22.570Z"
+    },
+    {
+      "name": "degraded-mode-handler.js",
+      "type": "js",
+      "path": "/Users/nickbianchi/MAIN/ai/agents/cloudexter/degraded-mode-handler.js",
+      "size": 5355,
+      "modified": "2025-07-09T20:40:57.846Z"
+    },
+    {
+      "name": "emergency-protocol.js",
+      "type": "js",
+      "path": "/Users/nickbianchi/MAIN/ai/agents/cloudexter/emergency-protocol.js",
+      "size": 8982,
+      "modified": "2025-07-09T20:40:57.848Z"
+    },
+    {
+      "name": "executive-chaos-deployment.js",
+      "type": "js",
+      "path": "/Users/nickbianchi/MAIN/ai/agents/cloudexter/executive-chaos-deployment.js",
+      "size": 26421,
+      "modified": "2025-07-09T20:07:52.028Z"
+    },
+    {
+      "name": "financial-chaos-engine.js",
+      "type": "js",
+      "path": "/Users/nickbianchi/MAIN/ai/agents/cloudexter/financial-chaos-engine.js",
+      "size": 31044,
+      "modified": "2025-07-09T20:55:49.192Z"
+    },
+    {
+      "name": "integration-layer-resilience-fix.js",
+      "type": "js",
+      "path": "/Users/nickbianchi/MAIN/ai/agents/cloudexter/integration-layer-resilience-fix.js",
+      "size": 28510,
+      "modified": "2025-07-13T16:02:04.807Z"
+    },
+    {
+      "name": "integration-resilience.js",
+      "type": "js",
+      "path": "/Users/nickbianchi/MAIN/ai/agents/cloudexter/integration-resilience.js",
+      "size": 1315,
+      "modified": "2025-07-13T16:04:32.487Z"
+    },
+    {
+      "name": "setup_chaos_tracking.js",
+      "type": "js",
+      "path": "/Users/nickbianchi/MAIN/ai/agents/cloudexter/setup_chaos_tracking.js",
+      "size": 4578,
+      "modified": "2025-07-03T09:12:46.549Z"
+    },
+    {
+      "name": "test-chittychain-chaos.js",
+      "type": "js",
+      "path": "/Users/nickbianchi/MAIN/ai/agents/cloudexter/test-chittychain-chaos.js",
+      "size": 2795,
+      "modified": "2025-07-09T01:48:13.907Z"
+    },
+    {
+      "name": "universal-dual-mode-migrator.js",
+      "type": "js",
+      "path": "/Users/nickbianchi/MAIN/ai/agents/cloudexter/universal-dual-mode-migrator.js",
+      "size": 9135,
+      "modified": "2025-07-09T02:24:17.626Z"
+    }
+  ],
+  "lastSync": "2025-07-13T23:25:38.518Z",
+  "source": "auto-discovered"
+}
