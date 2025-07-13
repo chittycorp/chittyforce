@@ -1,0 +1,11 @@
+{
+  "name": "LOGS",
+  "localName": "logs",
+  "type": "executive",
+  "path": "/Users/nickbianchi/MAIN/ai/exec/logs",
+  "discovered": "2025-07-13T23:25:30.703Z",
+  "services": {},
+  "structure": {},
+  "lastSync": "2025-07-13T23:25:36.916Z",
+  "source": "auto-discovered"
+}
