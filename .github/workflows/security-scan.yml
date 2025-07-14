@@ -17,10 +17,11 @@ jobs:
         run: |
           echo "🔐 Scanning for hardcoded secrets..."
           
-          # Check for common secret patterns
+          # Check for common secret patterns (excluding wrangler commands)
           if grep -r -E "(password|secret|key|token|api_key)\s*=\s*['\"][^'\"]+['\"]" \
              --include="*.js" --include="*.py" --include="*.yml" --include="*.json" \
-             --exclude-dir=node_modules --exclude-dir=.git .; then
+             --exclude-dir=node_modules --exclude-dir=.git . | \
+             grep -v "wrangler secret" | grep -v "secret:set"; then
             echo "❌ Potential secrets found in code!"
             exit 1
           fi

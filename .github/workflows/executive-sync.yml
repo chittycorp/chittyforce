@@ -43,7 +43,7 @@ jobs:
           
       - name: Validate configurations
         run: |
-          node -e "
+          node --input-type=module -e "
           import fs from 'fs';
           import yaml from 'js-yaml';
           
