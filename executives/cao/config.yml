@@ -1,0 +1,71 @@
+name: CAO
+full_name: Cloudette
+title: Chief Automation Officer
+type: executive
+version: 1.0.0
+created: 2025-07-13T00:00:00Z
+lastSync: 2025-07-13T00:00:00Z
+
+profile:
+  personality: Administrative efficiency expert
+  focus: Process automation and document management
+  specialties:
+    - Administrative workflows
+    - Document generation
+    - Compliance tracking
+    - HR administration
+    - Policy development
+
+paths:
+  local: ${CHITTYAIR_EXEC_PATH}/cao
+  sys: ${CHITTYAIR_EXEC_PATH}/cao/sys
+  dev: ${CHITTYAIR_EXEC_PATH}/cao/dev
+  temp: ${CHITTYAIR_EXEC_PATH}/cao/temp
+
+services:
+  dashboard:
+    enabled: true
+    port: 3201
+    path: sys/dashboard
+  automation:
+    enabled: true
+    port: 3202
+    path: sys/automation
+  templates:
+    enabled: true
+    port: 3203
+    path: sys/templates
+  integrations:
+    enabled: true
+    port: 3204
+    path: sys/integrations
+
+memory:
+  enabled: true
+  version: v5
+  assistant_id: asst_hs4gH6YrhMwNUaf0vb37JANX
+  vector_store: vs_cao_cloudette
+  isolation: true
+  sharing:
+    read_access: [ceo, coo]
+    write_access: [cao]
+
+mcp:
+  enabled: true
+  bridge: mcp-bridge
+  servers:
+    - memory-cloude-extended
+    - github
+    - api-unified
+
+security:
+  encryption: required
+  audit_logging: enabled
+  two_factor: production_only
+
+workflows:
+  - generateContract
+  - complianceCheck
+  - hrOnboarding
+  - documentDistribution
+  - policyUpdate

@@ -1,0 +1,67 @@
+name: AgentSmith
+full_name: Agent Smith
+title: Matrix Protector & Cloud Orchestrator
+type: agent
+version: 1.0.0
+created: 2025-07-13T00:00:00Z
+lastSync: 2025-07-13T00:00:00Z
+
+profile:
+  personality: Vigilant guardian with KonMari-Matrix philosophy
+  focus: File integrity and cloud orchestration
+  specialties:
+    - File system monitoring
+    - Cloud storage optimization
+    - Integrity verification
+    - Threat assessment
+    - Anomaly detection
+
+paths:
+  local: ${CHITTYAIR_AGENTS_PATH}/agentsmith
+  monitoring: ${CHITTYAIR_AGENTS_PATH}/agentsmith
+  backup: ${CHITTYAIR_AGENTS_PATH}/agentsmith/backups
+
+monitoring:
+  enabled: true
+  file_integrity: true
+  cloud_orchestration: true
+  threat_scoring: 1-10
+  real_time: true
+  targets:
+    - ${CHITTYAIR_ROOT_PATH}
+    - ${GDRIVE_PATH}
+    - ${ONEDRIVE_PATH}
+    - ${RCLONE_REMOTES}
+
+tools:
+  file_integrity_monitor: file_integrity_monitor.js
+  konmari_matrix: konmari_matrix.js
+  matrix_dashboard: matrix-dashboard.js
+  shadow_org_detector: shadow_org_detector.js
+  source_purity_guardian: source_purity_guardian.js
+
+integrations:
+  neon_logging: enabled
+  universal_mcp_audit: enabled
+  chittychain_staging: enabled
+
+security:
+  threat_assessment: comprehensive
+  anomaly_detection: ml_enhanced
+  alert_threshold: medium
+  escalation: automatic
+
+philosophy:
+  konmari_principle: "Does this file spark joy?"
+  assessment_criteria:
+    - utility
+    - relevance
+    - security_risk
+    - storage_efficiency
+    - access_patterns
+
+notifications:
+  high_threats: immediate
+  medium_threats: hourly_digest
+  low_threats: daily_summary
+  system_health: continuous

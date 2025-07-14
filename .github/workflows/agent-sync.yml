@@ -1,0 +1,107 @@
+name: Agent Sync & Monitoring
+
+on:
+  push:
+    paths:
+      - 'agents/**'
+  schedule:
+    - cron: '0 */6 * * *'  # Every 6 hours for agent health checks
+  workflow_dispatch:
+    inputs:
+      agent:
+        description: 'Agent to sync'
+        required: true
+        type: choice
+        options:
+          - all
+          - agentsmith
+          - cloudexter
+          - msmanners
+
+jobs:
+  agent-health-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          
+      - name: Check Agent Smith integrity monitoring
+        run: |
+          echo "🔍 Checking Agent Smith file integrity monitoring..."
+          # This would integrate with actual monitoring systems
+          
+      - name: Check Cloudexter chaos status
+        run: |
+          echo "🌪️ Checking Cloudexter chaos engineering status..."
+          # This would check chaos test results
+          
+      - name: Check MSManners communication health
+        run: |
+          echo "💬 Checking MSManners communication protocols..."
+          # This would verify communication channels
+
+  agent-specific-tests:
+    runs-on: ubuntu-latest
+    if: github.event_name == 'push'
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Detect changed agent
+        id: detect
+        run: |
+          if [[ "${{ github.event.head_commit.message }}" == *"agentsmith"* ]]; then
+            echo "agent=agentsmith" >> $GITHUB_OUTPUT
+          elif [[ "${{ github.event.head_commit.message }}" == *"cloudexter"* ]]; then
+            echo "agent=cloudexter" >> $GITHUB_OUTPUT
+          elif [[ "${{ github.event.head_commit.message }}" == *"msmanners"* ]]; then
+            echo "agent=msmanners" >> $GITHUB_OUTPUT
+          fi
+          
+      - name: Run Agent Smith tests
+        if: steps.detect.outputs.agent == 'agentsmith'
+        run: |
+          echo "🛡️ Running Agent Smith integrity tests..."
+          # Test file monitoring capabilities
+          # Test cloud storage analysis
+          # Test KonMari matrix functionality
+          
+      - name: Run Cloudexter tests
+        if: steps.detect.outputs.agent == 'cloudexter'
+        run: |
+          echo "🔥 Running Cloudexter chaos tests..."
+          # Test circuit breakers
+          # Test fallback services
+          # Test resilience patterns
+          
+      - name: Run MSManners tests
+        if: steps.detect.outputs.agent == 'msmanners'
+        run: |
+          echo "🎩 Running MSManners etiquette tests..."
+          # Test communication protocols
+          # Test message formatting
+          # Test politeness engine
+
+  deploy-agent-updates:
+    needs: [agent-health-check, agent-specific-tests]
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Deploy agent updates
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          echo "🚀 Deploying agent updates to production..."
+          # This would trigger actual deployment
+          
+      - name: Notify monitoring systems
+        run: |
+          echo "📢 Notifying monitoring systems of deployment..."
+          # Update Agent Smith about new deployments
+          # Trigger Cloudexter stability tests
+          # Update MSManners communication templates

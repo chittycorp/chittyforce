@@ -1,0 +1,146 @@
+name: Executive & Agent Sync
+
+on:
+  push:
+    paths:
+      - 'executives/**'
+      - 'agents/**'
+      - 'sync-executive.js'
+  pull_request:
+    paths:
+      - 'executives/**'
+      - 'agents/**'
+  workflow_dispatch:
+    inputs:
+      sync_type:
+        description: 'Type of sync to perform'
+        required: true
+        default: 'all'
+        type: choice
+        options:
+          - all
+          - executives
+          - agents
+          - cao
+          - cfo
+          - gc
+          - agentsmith
+
+jobs:
+  validate-config:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          
+      - name: Install dependencies
+        run: |
+          npm install js-yaml @octokit/rest fs-extra
+          
+      - name: Validate configurations
+        run: |
+          node -e "
+          import fs from 'fs';
+          import yaml from 'js-yaml';
+          
+          const validateYaml = (file) => {
+            try {
+              const content = fs.readFileSync(file, 'utf8');
+              yaml.load(content);
+              console.log('✅ Valid:', file);
+            } catch (error) {
+              console.error('❌ Invalid:', file, error.message);
+              process.exit(1);
+            }
+          };
+          
+          // Validate executive configs
+          const executives = ['cao', 'cfo', 'cio', 'cmo', 'coo', 'ceo', 'cto', 'gc'];
+          executives.forEach(exec => {
+            const configPath = \`executives/\${exec}/config.yml\`;
+            if (fs.existsSync(configPath)) {
+              validateYaml(configPath);
+            }
+          });
+          
+          // Validate agent configs  
+          const agents = ['agentsmith', 'cloudexter', 'msmanners'];
+          agents.forEach(agent => {
+            const configPath = \`agents/\${agent}/config.yml\`;
+            if (fs.existsSync(configPath)) {
+              validateYaml(configPath);
+            }
+          });
+          "
+
+  security-scan:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Scan for secrets
+        run: |
+          # Check for potential secrets in configs
+          if grep -r "password\|secret\|key\|token" executives/ agents/ --include="*.yml" --include="*.json"; then
+            echo "⚠️ Potential secrets found in configuration files"
+            echo "Please ensure all sensitive data is properly excluded"
+            exit 1
+          fi
+          echo "✅ No secrets detected in public configs"
+          
+      - name: Validate file permissions
+        run: |
+          # Ensure no executable permissions on config files
+          find executives/ agents/ -name "*.yml" -o -name "*.json" | while read file; do
+            if [ -x "$file" ]; then
+              echo "❌ Config file should not be executable: $file"
+              exit 1
+            fi
+          done
+          echo "✅ File permissions are correct"
+
+  deploy-production:
+    needs: [validate-config, security-scan]
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          
+      - name: Install dependencies
+        run: npm install js-yaml @octokit/rest fs-extra
+        
+      - name: Deploy to production infrastructure
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NEON_DATABASE_URL: ${{ secrets.NEON_DATABASE_URL }}
+        run: |
+          echo "🚀 Deploying ChittyAIR configurations to production"
+          echo "This would trigger the actual deployment process"
+          echo "- Update executive configurations"
+          echo "- Restart affected services" 
+          echo "- Update memory systems"
+          echo "- Validate deployments"
+
+  sync-to-local:
+    needs: [validate-config, security-scan]
+    runs-on: ubuntu-latest
+    if: github.event_name == 'workflow_dispatch'
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Trigger local sync
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          echo "🔄 Triggering sync to local ChittyAIR infrastructure"
+          echo "Sync type: ${{ github.event.inputs.sync_type }}"
+          # This would integrate with the actual local sync mechanism

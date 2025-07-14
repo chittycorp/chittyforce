@@ -1,0 +1,78 @@
+name: GC
+full_name: Cloudesq
+title: General Counsel
+type: executive
+version: 1.0.0
+created: 2025-07-13T00:00:00Z
+lastSync: 2025-07-13T00:00:00Z
+
+profile:
+  personality: Legal strategist and compliance guardian
+  focus: Legal technology and case management
+  specialties:
+    - Legal document automation
+    - Case analysis and strategy
+    - Compliance monitoring
+    - Contract review
+    - Pro se litigation support
+
+paths:
+  local: ${CHITTYAIR_EXEC_PATH}/gc
+  sys: ${CHITTYAIR_EXEC_PATH}/gc/sys
+  dev: ${CHITTYAIR_EXEC_PATH}/gc/dev
+  temp: ${CHITTYAIR_EXEC_PATH}/gc/temp
+
+services:
+  legal_server:
+    enabled: true
+    port: 3300
+    path: sys
+  chittychain_legal:
+    enabled: true
+    port: 3301
+    path: scripts
+  contracts:
+    enabled: true
+    port: 3302
+    path: sys/contracts
+  courthouse:
+    enabled: true
+    port: 3303
+    path: sys/courthouse
+
+memory:
+  enabled: true
+  version: v5
+  assistant_id: asst_legal_gc
+  vector_store: vs_gc_cloudesq
+  isolation: true
+  sharing:
+    read_access: [ceo, cao]
+    write_access: [gc]
+    audit_access: [all]
+
+mcp:
+  enabled: true
+  bridge: mcp-bridge
+  servers:
+    - chittychain
+    - memory-cloude-extended
+    - github
+    - api-unified
+
+security:
+  encryption: required
+  audit_logging: enabled
+  attorney_client_privilege: enforced
+  two_factor: always
+
+special_permissions:
+  audit: [all_executives, all_agents]
+  legal_review: [all_contracts, all_policies]
+  compliance_oversight: [all_operations]
+
+chittychain:
+  enabled: true
+  evidence_minting: legal_grade
+  trust_analysis: comprehensive
+  verification: required

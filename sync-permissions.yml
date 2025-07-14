@@ -1,0 +1,90 @@
+# ChittyAIR Sync Permissions Matrix
+# Defines access controls for synchronization operations
+
+executives:
+  cao:
+    read: [all]
+    write: [cao, shared]
+    deploy: [cao]
+    memory_access: [cao, read_only_others]
+  
+  cfo:
+    read: [all]
+    write: [cfo, shared]
+    deploy: [cfo]
+    memory_access: [cfo, read_only_others]
+  
+  cio:
+    read: [all]
+    write: [cio, shared, infrastructure]
+    deploy: [cio, infrastructure]
+    memory_access: [cio, read_only_others]
+  
+  cmo:
+    read: [all]
+    write: [cmo, shared]
+    deploy: [cmo]
+    memory_access: [cmo, read_only_others]
+  
+  coo:
+    read: [all]
+    write: [coo, shared]
+    deploy: [coo]
+    memory_access: [coo, read_only_others]
+  
+  ceo:
+    read: [all]
+    write: [all]
+    deploy: [all]
+    memory_access: [all]
+  
+  cto:
+    read: [all]
+    write: [cto, shared, infrastructure]
+    deploy: [cto, infrastructure]
+    memory_access: [cto, read_only_others]
+  
+  gc:
+    read: [all]
+    write: [gc, shared, legal]
+    deploy: [gc]
+    memory_access: [gc, read_only_others]
+    audit: [all]
+
+agents:
+  agentsmith:
+    read: [all]
+    write: [agents/agentsmith, monitoring]
+    deploy: [agents/agentsmith]
+    monitor: [all]
+    
+  cloudexter:
+    read: [all]
+    write: [agents/cloudexter, chaos]
+    deploy: [agents/cloudexter]
+    chaos_test: [non_production]
+    
+  msmanners:
+    read: [all]
+    write: [agents/msmanners]
+    deploy: [agents/msmanners]
+
+shared:
+  memory:
+    executives: [read_write]
+    agents: [read_only]
+    
+  mcp:
+    executives: [read_write]
+    agents: [read_only]
+    
+  infrastructure:
+    cio: [read_write]
+    cto: [read_write]
+    others: [read_only]
+
+security:
+  encryption_required: [memory, credentials, api_keys]
+  audit_logging: [all_operations]
+  two_factor_deploy: [production]
+  rollback_window: 24h
