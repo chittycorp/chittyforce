@@ -1,7 +1,7 @@
 # ChittyWorkforce - Human x AI Management System
 
 ## Overview
-ChittyAIR is the AI Resources department managing all AI executives and agents within the ChittyOS ecosystem. It provides synchronization, deployment, and management capabilities for the AI C-Suite and specialized agents.
+ChittyWorkforce is the AI Resources department managing all AI executives and agents within the ChittyOS ecosystem. It provides synchronization, deployment, and management capabilities for the AI C-Suite and specialized agents.
 
 ## AI Executives
 - **CEO** (Cloudeo) - Chief Executive Officer (Human X AI)
