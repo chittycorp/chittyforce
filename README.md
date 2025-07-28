@@ -1,22 +1,23 @@
-# ChittyAIR - AI Executive & Agent Management System
+# ChittyWorkforce - Human x AI Management System
 
 ## Overview
 ChittyAIR is the AI Resources department managing all AI executives and agents within the ChittyOS ecosystem. It provides synchronization, deployment, and management capabilities for the AI C-Suite and specialized agents.
 
 ## AI Executives
-- **CAO** (Cloudette) - Chief Automation Officer
-- **CFO** (Cloudefo) - Chief Financial Officer  
-- **CIO** (Cloudeio) - Chief Information Officer
-- **CMO** (Cloudemo) - Chief Marketing Officer
-- **COO** (Cloudelyn) - Chief Operating Officer
-- **CEO** (Cloudeco) - Chief Executive Officer
-- **CTO** (Cloudeto) - Chief Technology Officer
-- **GC** (Cloudesq) - General Counsel
+- **CEO** (Cloudeo) - Chief Executive Officer (Human X AI)
+- **CAO** (Cloudette) - Chief Automation Officer (AI)
+- **CFO** (Cloudefo) - Chief Financial Officer (AI)
+- **CMO** (Cloudemo) - Chief Marketing Officer (AI)
+- **CXO** (Cloudexo) - Chief Human X AI Officer (AI)
+- **CTO** (Cloudeto) - Chief Technology Officer (AI)
+- **GC** (Cloudesq) - General Counsel (AI)
 
 ## AI Agents
 - **Agent Smith** - Matrix Protector & Cloud Orchestrator
 - **Cloudexter** - Chaos Engineering & Resilience
-- **MSManners** - Etiquette and Communication
+- **Ms Manners** - Etiquette and Communication
+- **Frank** - IT & Systems
+- **Oscar** -
 
 ## Quick Start
 
