@@ -30,8 +30,8 @@ ChittyWorkforce is the AI Resources department managing all AI executives and ag
 ### Setup
 ```bash
 # Clone the repository
-git clone https://github.com/NeverShitty/chittyAIR.git
-cd chittyAIR
+git clone https://github.com/NeverShitty/ChittyWorkforce.git
+cd ChittyWorkforce
 
 # Install dependencies
 npm install
@@ -79,13 +79,13 @@ npm run workspace:deploy
 ## Architecture
 
 ```
-chittyAIR/
+ChittyWorkforce/
 ├── executives/          # Executive configurations and memory
 ├── agents/             # Agent configurations and tools
 ├── sync-executive.js   # Synchronization engine
 ├── attached_assets/    # Google Workspace integration
 ├── .github/           # GitHub Actions workflows
-└── LICENSE            # ChittyAIR Protection License
+└── LICENSE            # ChittyWorkforce Protection License
 ```
 
 ## Key Features
@@ -129,7 +129,7 @@ chittyAIR/
 
 ## Protection Model
 
-ChittyAIR implements a unique protection model:
+ChittyWorkforce implements a unique protection model:
 - **Employee-to-AI Transition**: Fair blockchain-based compensation
 - **Anti-Piracy**: Model DNA fingerprinting with kill switches
 - **Recovery-Based Legal**: FREE protection, pay from recovered damages
@@ -139,11 +139,11 @@ ChittyAIR implements a unique protection model:
 
 Proprietary - See LICENSE file for details.
 
-This software is protected by ChittyAIR's unique protection model including anti-piracy DNA fingerprinting, blockchain royalty distribution, and recovery-based legal protection.
+This software is protected by ChittyWorkforce's unique protection model including anti-piracy DNA fingerprinting, blockchain royalty distribution, and recovery-based legal protection.
 
 ## Support
 
 For issues or questions:
-- GitHub Issues: https://github.com/NeverShitty/chittyAIR/issues
+- GitHub Issues: https://github.com/NeverShitty/ChittyWorkforce/issues
 - Email: support@chitty.cc
-- Documentation: https://docs.chitty.cc/chittyair
+- Documentation: https://docs.chitty.cc/ChittyWorkforce
