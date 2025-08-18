@@ -1,7 +1,7 @@
-# ChittyWorkforce - Human x AI Management System
+# ChittyForce - Human x AI Management System
 
 ## Overview
-ChittyWorkforce is the AI Resources department managing all AI executives and agents within the ChittyOS ecosystem. It provides synchronization, deployment, and management capabilities for the AI C-Suite and specialized agents.
+ChittyForce is the AI Resources department managing all AI executives and agents within the ChittyOS ecosystem. It provides synchronization, deployment, and management capabilities for the AI C-Suite and specialized agents.
 
 ## AI Executives
 - **CEO** (Cloudeo) - Chief Executive Officer (Human X AI)
@@ -30,7 +30,7 @@ ChittyWorkforce is the AI Resources department managing all AI executives and ag
 ### Setup
 ```bash
 # Clone the repository
-git clone https://github.com/NeverShitty/ChittyWorkforce.git
+git clone https://github.com/chittycorp/chittyforce.git
 cd ChittyWorkforce
 
 # Install dependencies
@@ -79,13 +79,13 @@ npm run workspace:deploy
 ## Architecture
 
 ```
-ChittyWorkforce/
+ChittyForce/
 ├── executives/          # Executive configurations and memory
 ├── agents/             # Agent configurations and tools
 ├── sync-executive.js   # Synchronization engine
 ├── attached_assets/    # Google Workspace integration
 ├── .github/           # GitHub Actions workflows
-└── LICENSE            # ChittyWorkforce Protection License
+└── LICENSE            # ChittyForce Protection License
 ```
 
 ## Key Features
@@ -129,7 +129,7 @@ ChittyWorkforce/
 
 ## Protection Model
 
-ChittyWorkforce implements a unique protection model:
+ChittyForce implements a unique protection model:
 - **Employee-to-AI Transition**: Fair blockchain-based compensation
 - **Anti-Piracy**: Model DNA fingerprinting with kill switches
 - **Recovery-Based Legal**: FREE protection, pay from recovered damages
@@ -139,11 +139,11 @@ ChittyWorkforce implements a unique protection model:
 
 Proprietary - See LICENSE file for details.
 
-This software is protected by ChittyWorkforce's unique protection model including anti-piracy DNA fingerprinting, blockchain royalty distribution, and recovery-based legal protection.
+This software is protected by ChittyForce's unique protection model including anti-piracy DNA fingerprinting, blockchain royalty distribution, and recovery-based legal protection.
 
 ## Support
 
 For issues or questions:
-- GitHub Issues: https://github.com/NeverShitty/ChittyWorkforce/issues
+- GitHub Issues: https://github.com/chittycorp/chittyforce/issues
 - Email: support@chitty.cc
-- Documentation: https://docs.chitty.cc/ChittyWorkforce
+- Documentation: https://docs.chitty.cc/chittyforce
