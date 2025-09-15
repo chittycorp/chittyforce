@@ -114,7 +114,7 @@ jobs:
           echo "✅ Compliance audit completed"
           
       - name: Upload compliance report
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: compliance-report
           path: compliance-report.json
