@@ -1,0 +1,35 @@
+# ChittyConnect Configuration for chittyforce
+service:
+  name: chittyforce
+  display_name: Chittyforce
+  type: service
+  tier: 4
+  organization: CHITTYCORP
+  chitty_id: ${CHITTYFORCE_SERVICE_ID}
+  domains:
+    production: force.chitty.cc
+
+onboarding:
+  endpoint: https://get.chitty.cc/api/onboard
+  provisions: [chitty_id, service_token, certificate, trust_chain]
+
+auth:
+  provider: chittyauth
+  endpoint: https://auth.chitty.cc
+  service_token:
+    source: chittyconnect
+    key: CHITTYFORCE_SERVICE_TOKEN
+
+secrets:
+  provider: chittyconnect
+  vault: 1password
+  paths:
+    production: op://ChittyOS/chittyforce-prod
+
+github:
+  repository: CHITTYCORP/chittyforce
+
+monitoring:
+  health:
+    endpoint: /health
+    interval: 60s
