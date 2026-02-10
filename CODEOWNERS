@@ -1,0 +1,12 @@
+# Code Ownership — Required reviewers for pull requests
+
+# Protect all GitHub Actions workflows
+/.github/workflows/ @nickbianchi @ChittyCorp/cicd-admins
+
+# Protect CI/CD and compliance configuration
+/.github/ @nickbianchi @ChittyCorp/cicd-admins
+/CODEOWNERS @nickbianchi
+/.chittyconnect.yml @nickbianchi @ChittyCorp/cicd-admins
+
+# Default owners
+* @ChittyCorp/developers
