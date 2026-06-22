@@ -11,7 +11,7 @@ jobs:
   secret-scanning:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
       
       - name: Scan for hardcoded secrets
         run: |
@@ -39,7 +39,7 @@ jobs:
   permission-validation:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
       
       - name: Validate sync permissions
         run: |
@@ -58,7 +58,7 @@ jobs:
   anti-piracy-check:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
       
       - name: Verify anti-piracy markers
         run: |
@@ -81,7 +81,7 @@ jobs:
   compliance-audit:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
       
       - name: Generate compliance report
         run: |
